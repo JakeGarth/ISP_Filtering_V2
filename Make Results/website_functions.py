@@ -54,14 +54,14 @@ def requestWebsite(websiteURL, http, https):
     print("requesting: "+protocol+"://"+websiteURL)
     r = requests.get(protocol+"://"+websiteURL, auth=('user', 'pass'))
     print("WHY DO WE NOT GET HERE?-----------------------------------------------")
-    print("r: ")
-    print(r.text)
+
     print(number_script_tags(r.text))
     print("SCRIPT NUMBER ----------------------------------------------")
     results = {}
     results['RespondeCode'] = str(r.status_code)
     results['BlockPage'] = detectBlockPage(text_from_html(r.text))
     results['CloudflareBlockPage'] = detectCloudFlare(text_from_html(r.text))
+    print("Do we finish request website??")
     return results
 
 def listOfDNSs():
@@ -74,10 +74,13 @@ def listOfDNSs():
 
     DNSList = [MyDNS, AARNet, OptusDNS, GoogleDNS, Cloudflare]
     DNSDict = {'MyDNS':MyDNS, 'AARNet':AARNet, 'OptusDNS':OptusDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
-    DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARNet', OptusDNS:'OptusDNS', GoogleDNS:'GoogleDNS', Cloudflare:'Cloudflare'}
+    DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARC', OptusDNS:'Optus', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
     return DNSList, DNSDict, DNS_IP_Dict
 
 def resolveIPFromDNS(hostname, DNSList):
+    print("hostname")
+    print("DNSList:--------------")
+    print(DNSList)
     domain = hostname
     compiledList = []
     # set optional Cloudflare public DNS server
@@ -93,14 +96,19 @@ def resolveIPFromDNS(hostname, DNSList):
         tuple = ()
 
 
+    print("COMPILED LIST: ")
+    print(compiledList)
     return compiledList
 
 def scapyTracerouteWithSR(domain):
+    print("DO WE BREAK IN HERE")
     try:
         ans, unans = sr(IP(dst=domain, ttl=(1,25),id=RandShort())/TCP(flags=0x2), timeout = 2)
     except Exception as e:
         return [str(e).replace(',',";")]
     hops = []
+
+    print("DO WE GET HERE")
     for snd,rcv in ans:
 
 
@@ -130,18 +138,30 @@ def IPResponseCodesAndText(IPList):
 
 
 def getIPResponseCodeAndText(IPAddress):
+
+    print("IP Addres: ")
+    print(IPAddress)
+    print("IS THE ISSUE IN getIPResponseCodeAndText")
     if IPAddress == '' or IPAddress == None:
         return "NaN"
 
     try:
-
-        r = requests.get('http://'+IPAddress)
+        print("IN TRY")
+        #If requests takes longer than 5 seconds to connect, just return Error. Clearly some kind of failed connection
+        r = requests.get('http://'+IPAddress, timeout=5)
+        print("r: ")
+        print(r)
+        print("text")
+        print(r.text)
+        print("status code")
+        print(r.status_code)
 
         return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text)}
     except Exception as e:
+        print("DO WE GET IN EXCEPTION")
         exce = str(e).replace(',',";")
 
-        return {'Response_Code': exce, 'Visible_Text': "N/A"}
+        return {'Response_Code': "ERROR", 'Visible_Text': "N/A"}
 
 def getIPAddressOfDomain(websiteURL):
 

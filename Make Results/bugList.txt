@@ -1,5 +1,22 @@
-- something weird is happening where it isn't inserting the MyDNS results in to the Database
-- might need to make an object for every IP request
+To Do
+
+- include a way to store the html in database
+- collect number of script tags for every domain and include it in database
+
 - gets caught on traceroute on malicious websites sometimes: e.g. http://www.anime-sharing.com/. Might just need to do a try catch to make sure it don't freeze. Maybe a timeout?
-- currently blockpage and response code is just coming from the cloudflare results, need to get it from others as well. Need to edit my dictionary to do so.
+      - do a timeout on each ip on website_functions.getIPResponseCodeAndText()
+
 - might need to do some kind of last insert to make sure there is no concurrency issues with inserting.
+
+- need to make it such that it saves every domain as it goes. Reason being, in case it breaks or someone stops half wya through the list of domains, we stil have all the data up to that point.
+
+- need to request user input for the user name,  ISP name, etc
+
+Fixed
+- something weird is happening where it isn't inserting the MyDNS results in to the Database - Fixed.
+- currently blockpage and response code is just coming from the cloudflare results, need to get it from others as well. Need to edit my dictionary to do so. - Fixed
+- There is a duplication of checking results/blockpage/response code. Fixed it by making a getter and setter of the __all_results
+
+Dismissed
+
+- might need to make an object for every IP request

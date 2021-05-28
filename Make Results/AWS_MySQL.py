@@ -71,6 +71,8 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
     dns_ips = listOfDNSs()[1]
 
 
+    print("dns_ips: ------------")
+    print(dns_ips)
     #this takes care of adding all the DNS's to the database
     for DNS in dns_ips:
         dns_address = dns_ips.get(DNS)
@@ -99,9 +101,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         domain_name = domain.domain
         response_code = domain.responseCode
         Traceroute = ' '.join([str(addr) for addr in domain.Traceroute])
-        print("Traceroute: ")
-        print(type(Traceroute))
-        print(Traceroute)
+
         Number_of_Hops = domain.Hops_to_Domain
 
         cloudflare_blockpage = 0
@@ -115,31 +115,30 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
 
 
-        #print(domain.domain)
+
         DNS_ID_List_In_Database = {}
         for DNS in dns_ips:
-            print("DNS: ")
+
             sql = '''
             (SELECT id FROM DNS WHERE (dns_name = '%s'))''' % (DNS)
             cursor.execute(sql)
 
             DNS_IDs = cursor.fetchall()
-            print("DNS_IDs: "+str(DNS_IDs))
+
             #Get most recent DNS Inserted, might need to change this to do some kind of lock, maybe need to select the one with the same ISP id?
             DNS_ID = DNS_IDs[-1][0]
-            print(DNS_ID)
+
             sql = '''
             insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID)
             values('%s', '%s', '%s', '%s', '%s','%s', '%s')''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID)
-
-
-
             cursor.execute(sql)
             domainID = cursor.lastrowid
             DNS_ID_List_In_Database[DNS] = domainID
             db.commit()
 
 
+        print("DNS_ID_List_In_Database:---------")
+        print(DNS_ID_List_In_Database)
 
         #list of all IPs returned by all the DNSs
 
@@ -150,26 +149,50 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
 
         #This code inserts the IP requests in to the database
+        print("All_IPs_From_All_DNS:----------")
+        print(All_IPs_From_All_DNS)
+
+
+        print("ip_to_dns_dict:-----------------------")
+        print(ip_to_dns_dict)
+
+        print("Response_Code_Different_DNS_List:--------------")
+        print(domain.Response_Code_Different_DNS_List())
+
+
         for dns_ip in All_IPs_From_All_DNS:
             dns_ip = dns_ip
-            print(dns_ip)
+
             dns_name = ip_to_dns_dict.get(dns_ip)
 
-            print("dns_name: "+str(dns_name))
-            response_code_list = domain.Response_Code_Different_DNS_List().get('Cloudflare')
-            print("response_code_list")
-            print(response_code_list)
-            ip_blockpage_list = domain.IPBlockPageList().get('Cloudflare')
-            ip_cloudflare_blockpage_list = domain.IPCloudFlareBlockPageList().get('Cloudflare')
+
+            response_code_list = domain.Response_Code_Different_DNS_List().get(dns_name)
+
+            ip_blockpage_list = domain.IPBlockPageList().get(dns_name)
+            ip_cloudflare_blockpage_list = domain.IPCloudFlareBlockPageList().get(dns_name)
 
 
             count_position_of_ip = 0
             for ip in All_IPs_From_All_DNS.get(dns_ip):
+                print("count: "+str(count_position_of_ip))
+                print("ip: "+str(ip))
+                print("response_code_list:-----")
+                print(response_code_list)
                 response_code = response_code_list[count_position_of_ip] #fix this
                 blockpage = ip_blockpage_list[count_position_of_ip]
                 cloudflare_blockpage = ip_cloudflare_blockpage_list[count_position_of_ip]
                 count_position_of_ip += 1
+
+
+
+                if dns_name == 'Google' or dns_name == 'Optus': #should fix this later, this is bad code design
+                    dns_name += 'DNS'
+
+                if dns_name == 'AARC':
+                    dns_name = 'AARNet'
+
                 domainID = DNS_ID_List_In_Database.get(dns_name)
+
                 sql = '''
                     insert into Request(address, DNS_DELETELATER, domainID, response_code, blockpage, cloudflare_blockpage)
 
@@ -179,21 +202,9 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
 
 
-            #for ip in IPs_of_domain:
-            #    sql = '''
-            #    insert into Request(address)
-            #    values('%s')''' % (ip)
-            #    cursor.execute(sql)
-            #    db.commit()
-
-    #MAKE A Domain Object in the DB
-
-    #Make A IP object in the DB
-
 
 def show_ips():
-    print("Sowing IPS")
-    print("connect to online mysql")
+
     ENDPOINT="database-2.cuzgntwsj1dy.us-east-2.rds.amazonaws.com"
     PORT="3306"
     USR="admin"
