@@ -1,0 +1,5 @@
+- something weird is happening where it isn't inserting the MyDNS results in to the Database
+- might need to make an object for every IP request
+- gets caught on traceroute on malicious websites sometimes: e.g. http://www.anime-sharing.com/. Might just need to do a try catch to make sure it don't freeze. Maybe a timeout?
+- currently blockpage and response code is just coming from the cloudflare results, need to get it from others as well. Need to edit my dictionary to do so.
+- might need to do some kind of last insert to make sure there is no concurrency issues with inserting.

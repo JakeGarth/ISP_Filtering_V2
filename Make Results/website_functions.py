@@ -74,7 +74,8 @@ def listOfDNSs():
 
     DNSList = [MyDNS, AARNet, OptusDNS, GoogleDNS, Cloudflare]
     DNSDict = {'MyDNS':MyDNS, 'AARNet':AARNet, 'OptusDNS':OptusDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
-    return DNSList, DNSDict
+    DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARNet', OptusDNS:'OptusDNS', GoogleDNS:'GoogleDNS', Cloudflare:'Cloudflare'}
+    return DNSList, DNSDict, DNS_IP_Dict
 
 def resolveIPFromDNS(hostname, DNSList):
     domain = hostname
@@ -117,7 +118,7 @@ def IPResponseCodesAndText(IPList):
     blockPageList = []
     cloudFlareBlockPageList = []
 
-    print(IPList)
+
     for IP in IPList:
         response = getIPResponseCodeAndText(IP)
 
@@ -192,3 +193,12 @@ def getIPAddress():
     hostname = socket.gethostname()
     IPAddr = socket.gethostbyname(hostname)
     return IPAddr
+
+
+def convert_list_to_dict(this_list):
+    return_dict = {}
+    for DNS_Resolved_IPs in this_list:
+        DNS_IP = DNS_Resolved_IPs[0]
+        Resolved_IPs = DNS_Resolved_IPs[1]
+        return_dict[DNS_IP] = Resolved_IPs
+    return return_dict

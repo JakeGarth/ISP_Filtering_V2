@@ -114,6 +114,7 @@ class Domain:
 
         if Resolved_IPs == []:
             self.Resolved_IPs = self.return_IPs_Different_DNS()
+
         else:
             self.Resolved_IPs = Resolved_IPs
 
@@ -279,18 +280,17 @@ class Domain:
 
         try:
             results = requestWebsite(self.domainNoHTTP, http, https)
-            print("DO WE GET TO RESULTS?")
+
             return {'ResponseCode':results.get('RespondeCode'), 'BlockPage':results.get('BlockPage'), 'CloudflareBlockPage':results.get('CloudflareBlockPage')}
         except Exception as e:
-            print("NAH WE GET TO EXCEPTION")
+
             errorMessage = str(e).replace(',',';')
             return {'ResponseCode':errorMessage, 'BlockPage':"N/A", 'CloudflareBlockPage':"N/A"}
 
 
     def return_IPs_Different_DNS(self):
         DifferentDNSIPs = resolveIPFromDNS(self.domainNoHTTPNoSlashNoWWW, listOfDNSs()[0])
-        print("in here:")
-        print(DifferentDNSIPs)
+
         return DifferentDNSIPs
 
     def IPResponseCodesList(self):
@@ -313,7 +313,7 @@ class Domain:
 
         IPResponsesList = self.ISP_DNS_IPS
 
-        print("IPResponsesList: "+str(IPResponsesList))
+
         responseCodeList = IPResponseCodesAndText(IPResponsesList).get('responseCodeList')
 
         return responseCodeList
