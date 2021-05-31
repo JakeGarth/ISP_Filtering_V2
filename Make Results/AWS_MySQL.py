@@ -5,7 +5,10 @@ import mysql.connector
 import os
 import pymysql
 import time
-from website_functions import listOfDNSs, convert_list_to_dict
+import socket
+from website_functions import listOfDNSs, convert_list_to_dict, getIPAddress, get_location_from_IP
+import geoip2.webservice
+
 
 
 def convert_domain_to_database(list_of_domain_objects, isp_name):
@@ -48,8 +51,11 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
     #MAKE A ISP Object in the DB - Done
 
+    user_ip_address = getIPAddress()
+    #print("LOCAITON-----------------")
+    #print(get_location_from_IP(user_ip_address)) DOESNT WORK FOR SOME REASON "geoip2.errors.PermissionRequiredError: You do not have permission to use this service interface. "
     sql = '''
-    insert into ISP(isp_name, time_date) values('%s', '%s')''' % (isp_name,time_now)
+    insert into ISP(isp_name, time_date, user_ip_address) values('%s', '%s', '%s' )''' % (isp_name, time_now, user_ip_address)
     cursor.execute(sql)
     db.commit()
 
@@ -64,13 +70,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
     print(ispID)
     print("THE ID^")
 
-
-
-
-
     dns_ips = listOfDNSs()[1]
-
-
     print("dns_ips: ------------")
     print(dns_ips)
     #this takes care of adding all the DNS's to the database
@@ -112,6 +112,8 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         if domain.domainBlockPage == True:
             blockpage = 1
 
+        number_script_tags = domain.Number_of_Script_Tags
+
 
 
 
@@ -129,8 +131,8 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
             DNS_ID = DNS_IDs[-1][0]
 
             sql = '''
-            insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID)
-            values('%s', '%s', '%s', '%s', '%s','%s', '%s')''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID)
+            insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID, number_of_script_tags)
+            values('%s', '%s', '%s', '%s', '%s','%s', '%s', '%s')''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID, number_script_tags)
             cursor.execute(sql)
             domainID = cursor.lastrowid
             DNS_ID_List_In_Database[DNS] = domainID
@@ -170,6 +172,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
             ip_blockpage_list = domain.IPBlockPageList().get(dns_name)
             ip_cloudflare_blockpage_list = domain.IPCloudFlareBlockPageList().get(dns_name)
+            Number_of_Scripts_List = domain.Number_of_Scripts_Different_DNS_List.get(dns_name)
 
 
             count_position_of_ip = 0
@@ -181,6 +184,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
                 response_code = response_code_list[count_position_of_ip] #fix this
                 blockpage = ip_blockpage_list[count_position_of_ip]
                 cloudflare_blockpage = ip_cloudflare_blockpage_list[count_position_of_ip]
+                number_of_script_tags = Number_of_Scripts_List[count_position_of_ip]
                 count_position_of_ip += 1
 
 
@@ -194,125 +198,18 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
                 domainID = DNS_ID_List_In_Database.get(dns_name)
 
                 sql = '''
-                    insert into Request(address, DNS_DELETELATER, domainID, response_code, blockpage, cloudflare_blockpage)
-
-                    values('%s', '%s', '%s', '%s', '%s', '%s')''' % (ip, dns_name, domainID, response_code, blockpage, cloudflare_blockpage)
+                    insert into Request(address, DNS_DELETELATER, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags)
+                    values('%s', '%s', '%s', '%s', '%s', '%s', '%s')''' % (ip, dns_name, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags)
                 cursor.execute(sql)
                 db.commit()
-
-
-
-
-def show_ips():
-
-    ENDPOINT="database-2.cuzgntwsj1dy.us-east-2.rds.amazonaws.com"
-    PORT="3306"
-    USR="admin"
-    PW = "Cyberhub"
-    REGION="us-east-2a"
-    DBNAME="database-2"
-
-    db = pymysql.connect(host = ENDPOINT, user = USR, password = PW)
-
-    cursor = db.cursor()
-
-    cursor.execute("select version()")
-    print("cursor: "+str(cursor))
-
-    data = cursor.fetchone()
-    print(str(data))
-
-
-    sql = '''use ISP'''
-    print(cursor.execute(sql))
-
-    sql = '''show tables'''
-    print(cursor.execute(sql))
-
-    sql = '''select * from Domain'''
-    cursor.execute(sql)
-    print(cursor.fetchall())
-
-def create_table():
-    print("CREATING TABLE")
-
-
-def connect_AWS():
-    print("connect to online mysql")
-    ENDPOINT="database-2.cuzgntwsj1dy.us-east-2.rds.amazonaws.com"
-    PORT="3306"
-    USR="admin"
-    PW = "Cyberhub"
-    REGION="us-east-2a"
-    DBNAME="database-2"
-
-    db = pymysql.connect(host = ENDPOINT, user = USR, password = PW)
-
-    cursor = db.cursor()
-
-    cursor.execute("select version()")
-    print("cursor: "+str(cursor))
-
-    data = cursor.fetchone()
-    print(str(data))
-
-
-    sql = '''drop database kgptalkie'''
-    cursor.execute(sql)
-
-    sql = '''create database kgptalkie'''
-    cursor.execute(sql)
-
-    cursor.connection.commit()
-
-    sql = '''use kgptalkie'''
-    cursor.execute(sql)
-
-    sql = '''
-    create table person (
-    id int not null auto_increment,
-    fname text,
-    lname text,
-    primary key (id)
-    )
-    '''
-    cursor.execute(sql)
-
-    sql = '''
-    create table test (
-    id int not null auto_increment,
-    test_one text,
-    test_two text,
-    primary key (id)
-    )
-    '''
-    cursor.execute(sql)
-
-    sql = '''show tables'''
-    print(cursor.execute(sql))
-    print(cursor.fetchall())
-
-    sql = '''
-    insert into person(fname, lname) values('%s', '%s')''' % ('laxmi', 'kant')
-    cursor.execute(sql)
-    db.commit()
-
-    sql = '''select * from person'''
-    cursor.execute(sql)
-    print(cursor.fetchall())
-
-    print("END!")
-
 
 def main():
 
 
 
-    #connect_AWS()
-    convert_domain_to_database(domain_obj = None, isp_name = "TEST_20_May")
-    #show_ips()
 
-    #connect_AWS()
+    convert_domain_to_database(domain_obj = None, isp_name = "TEST_31_May")
+
 
 if __name__ == "__main__":
 

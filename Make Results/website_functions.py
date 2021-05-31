@@ -8,6 +8,7 @@ from nslookup import Nslookup
 import ipaddress
 from detect_blockpages import *
 import speedtest
+import geoip2.webservice
 
 
 def tag_visible(element):
@@ -52,16 +53,29 @@ def requestWebsite(websiteURL, http, https):
         protocol = "http"
 
     print("requesting: "+protocol+"://"+websiteURL)
+    print("DO WE GET IN HERE IN LINE 55 of REQUEST WEBSITE")
     r = requests.get(protocol+"://"+websiteURL, auth=('user', 'pass'))
-    print("WHY DO WE NOT GET HERE?-----------------------------------------------")
-
-    print(number_script_tags(r.text))
+    print("DO WE GET IN HERE IN LINE 57 of REQUEST WEBSITE")
     print("SCRIPT NUMBER ----------------------------------------------")
+    print(type(number_script_tags(r.text)))
+    print(number_script_tags(r.text))
     results = {}
-    results['RespondeCode'] = str(r.status_code)
+
+    #If response code isnt a number, just insert error in to database
+    if str(r.status_code).isnumeric() == False:
+        print("status code isnt numeric...")
+        results['ResponseCode'] = "ERROR"
+    else:
+        print("status code is numeric...")
+        results['ResponseCode'] = str(r.status_code)
+
     results['BlockPage'] = detectBlockPage(text_from_html(r.text))
     results['CloudflareBlockPage'] = detectCloudFlare(text_from_html(r.text))
-    print("Do we finish request website??")
+    results['Number_of_Script_Tags'] = number_script_tags(r.text)
+
+    print("RESULTS_---------------____________")
+    print(results)
+
     return results
 
 def listOfDNSs():
@@ -125,6 +139,7 @@ def IPResponseCodesAndText(IPList):
     responseCodeList = []
     blockPageList = []
     cloudFlareBlockPageList = []
+    number_of_script_tags = []
 
 
     for IP in IPList:
@@ -133,35 +148,27 @@ def IPResponseCodesAndText(IPList):
         responseCodeList.append(response.get('Response_Code'))
         blockPageList.append(detectBlockPage(response.get('Visible_Text')))
         cloudFlareBlockPageList.append(detectCloudFlare(response.get('Visible_Text')))
+        number_of_script_tags.append(response.get('number_of_script_tags'))
 
-    return {'responseCodeList':responseCodeList, 'blockPageList':blockPageList, 'cloudFlareBlockPageList':cloudFlareBlockPageList}
+    return {'responseCodeList':responseCodeList, 'blockPageList':blockPageList, 'cloudFlareBlockPageList':cloudFlareBlockPageList, 'number_of_script_tags':number_of_script_tags}
 
 
 def getIPResponseCodeAndText(IPAddress):
 
-    print("IP Addres: ")
-    print(IPAddress)
-    print("IS THE ISSUE IN getIPResponseCodeAndText")
+
     if IPAddress == '' or IPAddress == None:
         return "NaN"
 
     try:
-        print("IN TRY")
         #If requests takes longer than 5 seconds to connect, just return Error. Clearly some kind of failed connection
         r = requests.get('http://'+IPAddress, timeout=5)
-        print("r: ")
-        print(r)
-        print("text")
-        print(r.text)
-        print("status code")
-        print(r.status_code)
+        return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text), 'number_of_script_tags':number_script_tags(r.text)}
 
-        return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text)}
     except Exception as e:
-        print("DO WE GET IN EXCEPTION")
+
         exce = str(e).replace(',',";")
 
-        return {'Response_Code': "ERROR", 'Visible_Text': "N/A"}
+        return {'Response_Code': "ERROR", 'Visible_Text': "N/A", 'number_of_script_tags': "N/A"}
 
 def getIPAddressOfDomain(websiteURL):
 
@@ -222,3 +229,11 @@ def convert_list_to_dict(this_list):
         Resolved_IPs = DNS_Resolved_IPs[1]
         return_dict[DNS_IP] = Resolved_IPs
     return return_dict
+
+
+def get_location_from_IP(ip):
+    maxmind_account_id = 559831
+    maxmind_liscence_key = '90CgLcF2UBUsWmKS'
+    with geoip2.webservice.Client(maxmind_account_id, maxmind_liscence_key) as client:
+        response = client.city(ip)
+        return {'Country': response.country.name,'City':response.city.name, 'Latitude':response.location.latitude, 'Longitude':response.location.longitude}

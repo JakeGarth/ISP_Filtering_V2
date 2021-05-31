@@ -5,7 +5,8 @@ class Domain:
     def __init__(self, domain="", domainNoHTTP = "", domainNoHTTPNoSlash = "", domainNoHTTPNoSlashNoWWW = "", responseCode="", ISP_DNS="", ISP_DNS_IPS="", ISP_IP_Response_Code=[], Hops_to_Domain=-1, Traceroute="", AARC_DNS_IPs="",
     Resolved_IPs = [], Optus_DNS_IPs="", Google_DNS="", Cloudflare_DNS="", Response_Code_Different_DNS_List={},AARC_DNS_Response_Code="", Optus_DNS_Response_Code="",Google_DNS_Response_Code="", Cloudflare_DNS_Response_Code="",
     Block_Page_Different_DNS_List ={}, AARC_DNS_Block_Page = "", Optus_DNS_Block_Page = "", Google_DNS_Block_Page = "", Cloudflare_DNS_Block_Page = "", domainBlockPage="",Cloudflare_Block_Page_Different_DNS_List = {},domainCloudFlareBlockPage="",
-    AARC_DNS_Cloudflare_Block_Page = "", Optus_DNS_Cloudflare_Block_Page = "", Google_DNS_Cloudflare_Block_Page = "", Cloudflare_DNS_Cloudflare_Block_Page = "", Default_DNS_Block_Page = [], Default_DNS_Cloudflare_Block_Page = []):
+    AARC_DNS_Cloudflare_Block_Page = "", Optus_DNS_Cloudflare_Block_Page = "", Google_DNS_Cloudflare_Block_Page = "", Cloudflare_DNS_Cloudflare_Block_Page = "", Default_DNS_Block_Page = [], Default_DNS_Cloudflare_Block_Page = [], Number_of_Script_Tags = -1,
+    Number_of_Scripts_Different_DNS_List = {}, AARC_DNS_Number_of_Script_Tags = "", Optus_DNS_Number_of_Script_Tags = "", Google_DNS_Number_of_Script_Tags = "", Cloudflare_DNS_Number_of_Script_Tags = "", Default_DNS_Number_of_Script_Tags = ""):
 
 
         #Raw Results
@@ -47,6 +48,22 @@ class Domain:
 
             self.domainCloudFlareBlockPage = domainCloudFlareBlockPage
 
+
+        if Number_of_Script_Tags == -1:
+
+            self.Number_of_Script_Tags = self.domainResults.get('Number_of_Script_Tags')
+            print("Do we get in here")
+            print("self.domainResults")
+            print(self.domainResults)
+            print("self.domainResults.get('Number_of_Script_Tags')")
+            print(self.domainResults.get('Number_of_Script_Tags'))
+
+        else:
+            self.Number_of_Script_Tags = Number_of_Script_Tags
+
+        print("Number_of_Script_Tags in domain.py line 59")
+        print(Number_of_Script_Tags)
+
         if ISP_DNS == "":
             self.ISP_DNS = self.return_DNS()
         else:
@@ -58,27 +75,15 @@ class Domain:
 
             if isinstance(ipList, str):
                 ipList = ipList.replace("[","").replace("]","").replace(" ","").replace("'","").split(";")
-
-
             self.ISP_DNS_IPS = ipList
 
-
         else:
-
             try:
                 #splitting in to a list
                 ipList = ISP_DNS_IPS
                 self.ISP_DNS_IPS = ipList
-
-
-
             except Exception as e:
-
-
                 self.ISP_DNS_IPS = ISP_DNS_IPS
-
-
-
 
         if Traceroute == "":
             self.Traceroute = self.tracerouteToDomain()
@@ -91,12 +96,10 @@ class Domain:
             self.Hops_to_Domain = Hops_to_Domain
 
         if Resolved_IPs == []:
-            print("ISSUE HERE11111111111111111111111111111")
+
 
             self.Resolved_IPs = self.return_IPs_Different_DNS()
 
-            print("self.Resolved_IPs")
-            print(self.Resolved_IPs)
 
 
         else:
@@ -145,11 +148,11 @@ class Domain:
             #splitting in to a list
                 self.Cloudflare_DNS = Cloudflare_DNS
 
-        print("STARTING SETT ALL RESULTS")
+
         self.set_IP_All_Blockpages_All_Responses() #Sets all response codes, blockpage results
-        print("COMPLETED SETTING ALL RESULTS")
+
         if ISP_IP_Response_Code == []:
-            print("DOING THIS, should be no more IP checking after here")
+
             self.ISP_IP_Response_Code = self.IPResponseCodesList().get('MyDNS')
 
 
@@ -189,15 +192,12 @@ class Domain:
 
         if Optus_DNS_Response_Code == "":
             self.Optus_DNS_Response_Code = self.IPCloudFlareBlockPageList().get('Optus')
-            print("OPTUS")
-            print(self.Optus_DNS_Response_Code)
         else:
             self.Optus_DNS_Response_Code = Optus_DNS_Response_Code
 
         if Google_DNS_Response_Code == "":
             self.Google_DNS_Response_Code = self.IPCloudFlareBlockPageList().get('Google')
-            print("GOOGLE")
-            print(self.Google_DNS_Response_Code)
+
         else:
             self.Google_DNS_Response_Code = Google_DNS_Response_Code
 
@@ -206,11 +206,6 @@ class Domain:
         else:
             self.Cloudflare_DNS_Response_Code = Cloudflare_DNS_Response_Code
 
-
-        print("self.Google_DNS_Response_Code:")
-        print(self.Google_DNS_Response_Code)
-        print("self.Cloudflare_DNS_Response_Code")
-        print(self.Cloudflare_DNS_Response_Code)
         self.Public_DNS_Response_Codes = self.Google_DNS_Response_Code + self.Cloudflare_DNS_Response_Code
         self.ISP_IP_in_Non_ISP_IP = self.Is_ISP_IP_In_NonISP_DNS_IP()
 
@@ -221,6 +216,8 @@ class Domain:
         #self.DomainBlockPage = self.
 
         #put in some blockpage lists and cloudflare page lists, exam same as "ISP_IP_in_Non_ISP_IP"
+
+
 
         if Block_Page_Different_DNS_List == {}:
 
@@ -283,6 +280,32 @@ class Domain:
         self.Cloudflare_Block_Page_Public_DNS_List = self.Google_DNS_Cloudflare_Block_Page + self.Cloudflare_DNS_Cloudflare_Block_Page
 
 
+        if Number_of_Scripts_Different_DNS_List == {}:
+            self.Number_of_Scripts_Different_DNS_List = self.NumberScriptTagList()
+        else:
+            self.Number_of_Scripts_Different_DNS_List = Number_of_Scripts_Different_DNS_List
+
+        if AARC_DNS_Cloudflare_Block_Page == "":
+
+            self.AARC_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('AARC')
+        else:
+            self.AARC_DNS_Number_of_Script_Tags = AARC_DNS_Number_of_Script_Tags
+
+        if Optus_DNS_Cloudflare_Block_Page == "":
+            self.Optus_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('Optus')
+        else:
+            self.Optus_DNS_Number_of_Script_Tags = Optus_DNS_Number_of_Script_Tags
+
+        if Google_DNS_Cloudflare_Block_Page == "":
+            self.Google_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('Google')
+        else:
+            self.Google_DNS_Number_of_Script_Tags = Google_DNS_Number_of_Script_Tags
+
+        if Cloudflare_DNS_Cloudflare_Block_Page == "":
+            self.Cloudflare_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('Cloudflare')
+        else:
+            self.Cloudflare_DNS_Number_of_Script_Tags = Cloudflare_DNS_Number_of_Script_Tags
+
         #self.All_IPs_From_Every_DNS = self.Response_Code_Different_DNS_List.copy()
         #self.All_IPs_From_Every_DNS['MyDNS'] = self.ISP_IP_Response_Code
 
@@ -303,28 +326,24 @@ class Domain:
         if self.domain[0:5] == "http:":
             http = True
 
-
         try:
             results = requestWebsite(self.domainNoHTTP, http, https)
 
-            return {'ResponseCode':results.get('RespondeCode'), 'BlockPage':results.get('BlockPage'), 'CloudflareBlockPage':results.get('CloudflareBlockPage')}
+            return {'ResponseCode':results.get('ResponseCode'), 'BlockPage':results.get('BlockPage'), 'CloudflareBlockPage':results.get('CloudflareBlockPage'), 'Number_of_Script_Tags':results.get('Number_of_Script_Tags')}
         except Exception as e:
 
             errorMessage = str(e).replace(',',';')
-            return {'ResponseCode':errorMessage, 'BlockPage':"N/A", 'CloudflareBlockPage':"N/A"}
+            return {'ResponseCode':'ERROR', 'BlockPage':"N/A", 'CloudflareBlockPage':"N/A", 'Number_of_Script_Tags':"N/A"}
 
 
     def return_IPs_Different_DNS(self):
-        print("-1./sadasdsa")
+
         DifferentDNSIPs = resolveIPFromDNS(self.domainNoHTTPNoSlashNoWWW, listOfDNSs()[0])
-        print("1.")
-        print("DifferentDNSIPs-------------------HERE")
-        print(DifferentDNSIPs)
+
         return DifferentDNSIPs
 
 
     def set_IP_All_Blockpages_All_Responses(self):
-        print("CALLED HERE 000000000000000000000000000000000000000000000000000000000000000000000000000")
         MyDNS_results = IPResponseCodesAndText(self.ISP_DNS_IPS)
         AARC_results =  IPResponseCodesAndText(self.AARC_DNS_IPs)
         Optus_results = IPResponseCodesAndText(self.Optus_DNS_IPs)
@@ -334,17 +353,16 @@ class Domain:
         self.__all_results = {'MyDNS': MyDNS_results, 'AARC':AARC_results, 'Optus':Optus_results,
         'Google':Google_results, 'Cloudflare':Cloudflare_results}.copy()
 
-        print("ALL RESULTS:")
-        print(type(self.__all_results))
-        print(self.__all_results)
-        print("MyDNS RESULTS:")
-        print(type(self.__all_results.get('MyDNS')))
-        print(self.__all_results.get('MyDNS'))
-
-
-
     def get_IP_All_Blockpages_All_Responses(self):
         return self.__all_results
+
+
+    def NumberScriptTagList(self):
+        results = self.get_IP_All_Blockpages_All_Responses()
+
+        number_script_tags_results = {'MyDNS':results.get('MyDNS').get('number_of_script_tags'), 'AARC': results.get('AARC').get('number_of_script_tags'), 'Optus':results.get('Optus').get('number_of_script_tags'),
+        'Google':results.get('Google').get('number_of_script_tags'), 'Cloudflare':results.get('Cloudflare').get('number_of_script_tags')}
+        return number_script_tags_results
 
     def IPResponseCodesList(self):
         results = self.get_IP_All_Blockpages_All_Responses()
@@ -356,7 +374,7 @@ class Domain:
         #'Google':self.IP_All_Blockpages_All_Responses.get('Google').get('responseCodeList'), 'Cloudflare':self.IP_All_Blockpages_All_Responses.get('Cloudflare').get('responseCodeList')}
 
     def IPBlockPageList(self):
-        print("3.")
+
         results = self.get_IP_All_Blockpages_All_Responses()
 
         blockpage_results = {'MyDNS':results.get('MyDNS').get('blockPageList'), 'AARC': results.get('AARC').get('blockPageList'), 'Optus':results.get('Optus').get('blockPageList'),
@@ -376,9 +394,6 @@ class Domain:
 
 
     def IPResponseCodesListFromString(self):
-
-        print("self.ISP_DNS_IPS------")
-        print(self.ISP_DNS_IPS)
         IPResponsesList = self.ISP_DNS_IPS
 
         #issue is here, there are heaps of IP addresses
@@ -387,7 +402,7 @@ class Domain:
         return responseCodeList
 
     def tracerouteToDomain(self):
-        print("5.")
+
         return scapyTracerouteWithSR(self.domainNoHTTPNoSlashNoWWW)
 
     def Is_ISP_IP_In_NonISP_DNS_IP(self):
@@ -396,13 +411,9 @@ class Domain:
         self.getPublicDNSResponses()
 
         publicDNSIPList = self.Google_DNS + self.Cloudflare_DNS
-
-
         for ip in self.ISP_DNS_IPS[0].split("; "):
 
             if ip in publicDNSIPList:
-
-
                 return True
 
         else:
@@ -429,8 +440,6 @@ class Domain:
 
             if firstIP in secondDNSIPList:
                 firstFoundInSecond = True
-
-
                 return True
 
         return False
