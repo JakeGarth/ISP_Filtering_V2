@@ -11,9 +11,6 @@ To Do
 
 - need to request user input for the user name,  ISP name, etc
 
-- get geolocation from IP address
-
-- get download speed for user
 
 Fixed
 - something weird is happening where it isn't inserting the MyDNS results in to the Database - Fixed.
@@ -21,6 +18,8 @@ Fixed
 - There is a duplication of checking results/blockpage/response code. Fixed it by making a getter and setter of the __all_results
 - gets caught on traceroute on malicious websites sometimes: e.g. http://www.anime-sharing.com/. Might just need to do a try catch to make sure it don't freeze. Maybe a timeout?
       - do a timeout on each ip on website_functions.getIPResponseCodeAndText()
+- get geolocation from IP address
+- get download speed for user
 
 Dismissed
 

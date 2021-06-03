@@ -6,7 +6,7 @@ import os
 import pymysql
 import time
 import socket
-from website_functions import listOfDNSs, convert_list_to_dict, getIPAddress, get_location_from_IP
+from website_functions import listOfDNSs, convert_list_to_dict, getIPAddress, get_my_location_from_IP, speed_test
 import geoip2.webservice
 
 
@@ -52,10 +52,17 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
     #MAKE A ISP Object in the DB - Done
 
     user_ip_address = getIPAddress()
+    Download_and_Upload = speed_test()
+    lat_and_long = get_my_location_from_IP()
+    print(lat_and_long)
+    print(type(lat_and_long.get('latitude')))
+    print(Download_and_Upload)
+    print(type(Download_and_Upload.get('download')))
     #print("LOCAITON-----------------")
     #print(get_location_from_IP(user_ip_address)) DOESNT WORK FOR SOME REASON "geoip2.errors.PermissionRequiredError: You do not have permission to use this service interface. "
     sql = '''
-    insert into ISP(isp_name, time_date, user_ip_address) values('%s', '%s', '%s' )''' % (isp_name, time_now, user_ip_address)
+    insert into ISP(isp_name, time_date, user_ip_address, Download_Speed, Upload_Speed, isp_name_speedtest, ping, public_ip_address, latitude, longitude) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')''' % (isp_name, time_now, user_ip_address,
+    Download_and_Upload.get('download'), Download_and_Upload.get('upload'), Download_and_Upload.get('isp_name'), Download_and_Upload.get('ping'), Download_and_Upload.get('client_ip'),lat_and_long.get('latitude') , lat_and_long.get('longitude'))
     cursor.execute(sql)
     db.commit()
 
@@ -209,6 +216,7 @@ def main():
 
 
     convert_domain_to_database(domain_obj = None, isp_name = "TEST_31_May")
+
 
 
 if __name__ == "__main__":

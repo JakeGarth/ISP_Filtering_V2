@@ -2,6 +2,7 @@ from website_functions import *
 from domain import *
 from CSV_Methods import *
 from AWS_MySQL import convert_domain_to_database
+import geocoder
 
 
 
@@ -46,7 +47,8 @@ def CalculateListOfDomains(openFile, writeFile):
 
 def main():
     #print("connect to online mysql")
-
+    #print(get_my_location_from_IP())
+    #print(speed_test())
     CalculateListOfDomains("CopyRight_Telstra.txt","Results/test.csv")
 
 if __name__ == "__main__":

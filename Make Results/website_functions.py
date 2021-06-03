@@ -9,6 +9,8 @@ import ipaddress
 from detect_blockpages import *
 import speedtest
 import geoip2.webservice
+import geocoder
+
 
 
 def tag_visible(element):
@@ -29,9 +31,18 @@ def text_from_html(body):
 def speed_test():
     st = speedtest.Speedtest()
 
+    All_Results = st.results.dict()
+    print("All results")
+    print(All_Results)
     Download = st.download()
     Upload = st.upload()
-    return {'download':Download, 'upload':Upload}
+
+    ISP_name = All_Results.get('client').get('isp')
+    print("st.results.dict()")
+    print(st.results.dict())
+    ping = st.results.dict().get('ping')
+    client_ip = st.results.dict().get('client').get('ip')
+    return {'download':Download, 'upload':Upload, 'isp_name': ISP_name, 'ping': ping, 'client_ip': client_ip}
 
 
 def number_script_tags(html):
@@ -230,10 +241,18 @@ def convert_list_to_dict(this_list):
         return_dict[DNS_IP] = Resolved_IPs
     return return_dict
 
-
+'''
+OBSOLETE CODE
 def get_location_from_IP(ip):
     maxmind_account_id = 559831
     maxmind_liscence_key = '90CgLcF2UBUsWmKS'
     with geoip2.webservice.Client(maxmind_account_id, maxmind_liscence_key) as client:
         response = client.city(ip)
         return {'Country': response.country.name,'City':response.city.name, 'Latitude':response.location.latitude, 'Longitude':response.location.longitude}
+'''
+
+def get_my_location_from_IP():
+    g = geocoder.ip('me')
+    print(type(g.latlng))
+    print(g.latlng)
+    return {'latitude':g.latlng[0], 'longitude':g.latlng[1]}
