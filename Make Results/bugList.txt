@@ -2,14 +2,15 @@ To Do
 
 - include a way to store the html in database. AWS S3?
 
-- collect number of script tags for every domain and include it in database
-  - currently it is putting MyDNS script tages for all domains
-
 - might need to do some kind of last insert to make sure there is no concurrency issues with inserting.
 
 - need to make it such that it saves every domain as it goes. Reason being, in case it breaks or someone stops half wya through the list of domains, we stil have all the data up to that point.
+  - maybe put a try catch around each domain and just go to next domain if there is an error
+  - make sure no issues with getting the most recent insert in to the DB when doing the try and catch
 
 - need to request user input for the user name,  ISP name, etc
+
+- make the DNS's being checked scalable?
 
 
 Fixed
@@ -20,6 +21,11 @@ Fixed
       - do a timeout on each ip on website_functions.getIPResponseCodeAndText()
 - get geolocation from IP address
 - get download speed for user
+
+- collect number of script tags for every domain and include it in database
+  - currently it is putting MyDNS script tags for all domains
+  - I actually don't think this is an issue, because the individual IP's are collecting the right number of script tags
+  - fixed by just doing a -1 to represent that there was no need to collect those script tags - DIDNT DO THIS, DECIDED AGAINST IT
 
 Dismissed
 

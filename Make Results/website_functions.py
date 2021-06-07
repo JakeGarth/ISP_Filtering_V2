@@ -13,6 +13,7 @@ import geocoder
 
 
 
+#Returns whether a tag is visible text in html
 def tag_visible(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
@@ -20,7 +21,7 @@ def tag_visible(element):
         return False
     return True
 
-
+#returns all visible text from html
 def text_from_html(body):
     soup = BeautifulSoup(body, 'html.parser')
     texts = soup.findAll(text=True)
@@ -28,6 +29,7 @@ def text_from_html(body):
     return u" ".join(t.strip() for t in visible_texts)
 
 
+#returns the key results from a speedtest, such as download/upload, isp name, ping
 def speed_test():
     st = speedtest.Speedtest()
 
@@ -45,18 +47,19 @@ def speed_test():
     return {'download':Download, 'upload':Upload, 'isp_name': ISP_name, 'ping': ping, 'client_ip': client_ip}
 
 
+#returns number of script tags in html
 def number_script_tags(html):
     soup = BeautifulSoup(html, 'html.parser')
     count = 0
     for tag in soup.findAll():
         if (tag.name == 'script'):
             count += 1
-
     return count
 
 
+#Returns the response code, blockpages and number script tags for the domain checked by the ISP
+#and default DNS
 def requestWebsite(websiteURL, http, https):
-
     protocol = "This is broken"
     if(https == True):
         protocol = "https"
@@ -64,12 +67,7 @@ def requestWebsite(websiteURL, http, https):
         protocol = "http"
 
     print("requesting: "+protocol+"://"+websiteURL)
-    print("DO WE GET IN HERE IN LINE 55 of REQUEST WEBSITE")
     r = requests.get(protocol+"://"+websiteURL, auth=('user', 'pass'))
-    print("DO WE GET IN HERE IN LINE 57 of REQUEST WEBSITE")
-    print("SCRIPT NUMBER ----------------------------------------------")
-    print(type(number_script_tags(r.text)))
-    print(number_script_tags(r.text))
     results = {}
 
     #If response code isnt a number, just insert error in to database
@@ -84,24 +82,21 @@ def requestWebsite(websiteURL, http, https):
     results['CloudflareBlockPage'] = detectCloudFlare(text_from_html(r.text))
     results['Number_of_Script_Tags'] = number_script_tags(r.text)
 
-    print("RESULTS_---------------____________")
-    print(results)
-
     return results
 
+#This is the list of DNS's we are checking
 def listOfDNSs():
     MyDNS = getMyDNS()
     AARNet = "10.127.5.17"
     OptusDNS = "192.168.43.202"
     GoogleDNS = "8.8.8.8"
     Cloudflare = "1.1.1.1"
-
-
     DNSList = [MyDNS, AARNet, OptusDNS, GoogleDNS, Cloudflare]
     DNSDict = {'MyDNS':MyDNS, 'AARNet':AARNet, 'OptusDNS':OptusDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
     DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARC', OptusDNS:'Optus', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
     return DNSList, DNSDict, DNS_IP_Dict
 
+#Return the IP's resolved by every DNS
 def resolveIPFromDNS(hostname, DNSList):
     print("hostname")
     print("DNSList:--------------")
@@ -119,21 +114,20 @@ def resolveIPFromDNS(hostname, DNSList):
         tuple = (DNSIP, ips_record.answer)
         compiledList.append(tuple)
         tuple = ()
-
-
-    print("COMPILED LIST: ")
-    print(compiledList)
     return compiledList
 
+
+#Returns the traceroute from local machine to domain via ISP
 def scapyTracerouteWithSR(domain):
-    print("DO WE BREAK IN HERE")
+
     try:
         ans, unans = sr(IP(dst=domain, ttl=(1,25),id=RandShort())/TCP(flags=0x2), timeout = 2)
     except Exception as e:
-        return [str(e).replace(',',";")]
+        #maybe I should just make it return "error", that way there is no risk of weird SQL insertions breaking my results
+        return [str(str(e).replace(',',";").replace("'","" ))]
     hops = []
 
-    print("DO WE GET HERE")
+
     for snd,rcv in ans:
 
 
@@ -146,11 +140,14 @@ def scapyTracerouteWithSR(domain):
 
     return hops
 
+#Given a list of IP addresses
+#return the response code, blockpage detection and number of script tags (and maybe html)
 def IPResponseCodesAndText(IPList):
     responseCodeList = []
     blockPageList = []
     cloudFlareBlockPageList = []
     number_of_script_tags = []
+    html = []
 
 
     for IP in IPList:
@@ -160,27 +157,26 @@ def IPResponseCodesAndText(IPList):
         blockPageList.append(detectBlockPage(response.get('Visible_Text')))
         cloudFlareBlockPageList.append(detectCloudFlare(response.get('Visible_Text')))
         number_of_script_tags.append(response.get('number_of_script_tags'))
+        html.append(response.get('html'))
 
-    return {'responseCodeList':responseCodeList, 'blockPageList':blockPageList, 'cloudFlareBlockPageList':cloudFlareBlockPageList, 'number_of_script_tags':number_of_script_tags}
+    return {'responseCodeList':responseCodeList, 'blockPageList':blockPageList, 'cloudFlareBlockPageList':cloudFlareBlockPageList, 'number_of_script_tags':number_of_script_tags, 'html':html}
 
 
+#Given an individual IP address, return the response code, visible text and number of script tags
 def getIPResponseCodeAndText(IPAddress):
-
-
     if IPAddress == '' or IPAddress == None:
         return "NaN"
-
     try:
         #If requests takes longer than 5 seconds to connect, just return Error. Clearly some kind of failed connection
         r = requests.get('http://'+IPAddress, timeout=5)
-        return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text), 'number_of_script_tags':number_script_tags(r.text)}
+        return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text), 'number_of_script_tags':number_script_tags(r.text), 'html':r.text}
 
     except Exception as e:
-
         exce = str(e).replace(',',";")
+        return {'Response_Code': "ERROR", 'Visible_Text': "N/A", 'number_of_script_tags': "N/A", 'html': "N/A"}
 
-        return {'Response_Code': "ERROR", 'Visible_Text': "N/A", 'number_of_script_tags': "N/A"}
 
+#Returns the IP Address IP list
 def getIPAddressOfDomain(websiteURL):
 
     try:
@@ -198,10 +194,13 @@ def getIPAddressOfDomain(websiteURL):
     return IPaddressString, IPAddressList
 
 
+#Returns the IP of the DNS I am connected too - doesn't work sometimes. Speedtest tells me the name of my ISP anyway.
 def getMyDNS():
     dns_resolver = dns.resolver.Resolver()
     return dns_resolver.nameservers[0]
 
+
+#Returns different ways to represent a domain name as a stirng
 def stripDomainName(domainName):
     #Returns different ways of represeting a domain name as a dictionary.
     positionofWWW = domainName.find('://')
@@ -226,6 +225,7 @@ def stripDomainName(domainName):
 
     return {'WebsiteNOHttp': WebsiteNOHttp,  'WebsiteNOHttpNoSlash': WebsiteNOHttpNoSlash, 'WebsiteNoHttpNoWWWNoSlash': WebsiteNoWWWNoSlash}
 
+#Returns IP address of the user - not necesarily the public facing IP address. Speedtest tells me the public facing IP address.
 def getIPAddress():
     #Returns IP address of the user
     hostname = socket.gethostname()
@@ -233,6 +233,7 @@ def getIPAddress():
     return IPAddr
 
 
+#Returns a list of tuples to a dictionary
 def convert_list_to_dict(this_list):
     return_dict = {}
     for DNS_Resolved_IPs in this_list:
@@ -240,6 +241,17 @@ def convert_list_to_dict(this_list):
         Resolved_IPs = DNS_Resolved_IPs[1]
         return_dict[DNS_IP] = Resolved_IPs
     return return_dict
+
+
+
+#Returns latitude and longitude based off users IP address
+def get_my_location_from_IP():
+    g = geocoder.ip('me')
+    print(type(g.country))
+    print(g.country)
+    print(type(g.latlng))
+    print(g.latlng)
+    return {'latitude':g.latlng[0], 'longitude':g.latlng[1], 'country':g.country}
 
 '''
 OBSOLETE CODE
@@ -250,9 +262,3 @@ def get_location_from_IP(ip):
         response = client.city(ip)
         return {'Country': response.country.name,'City':response.city.name, 'Latitude':response.location.latitude, 'Longitude':response.location.longitude}
 '''
-
-def get_my_location_from_IP():
-    g = geocoder.ip('me')
-    print(type(g.latlng))
-    print(g.latlng)
-    return {'latitude':g.latlng[0], 'longitude':g.latlng[1]}

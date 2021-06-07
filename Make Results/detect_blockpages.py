@@ -18,18 +18,19 @@ def text_from_html(body):
     visible_texts = filter(tag_visible, texts)
     return u" ".join(t.strip() for t in visible_texts)
 
-
+#This list needs to expanded
 block_page_phrases = [
     "ACCESS TO THIS WEBSITE HAS BEEN DISABLED BECAUSE THE FEDERAL COURT OF AUSTRALIA HAS DETERMINED THAT IT INFRINGES OR FACILITATES THE INFRINGEMENT OF COPYRIGHT",
     "Access Denied"
     ]
 
+#This list needs to be expanded
 cloudflare_phrases = [
     "You've requested an IP address that is part of the Cloudflare network.",
     "Direct IP access not allowed"
     ]
 
-
+#Function for detecting blockpages
 def detectBlockPage(text):
     for phrase in block_page_phrases:
 
@@ -38,6 +39,7 @@ def detectBlockPage(text):
             return "True"
     return "False"
 
+#Function for detecting cloudflare blockpages
 def detectCloudFlare(text):
     for phrase in cloudflare_phrases:
         if phrase.lower() in text.lower():
