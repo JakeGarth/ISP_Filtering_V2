@@ -31,19 +31,43 @@ def text_from_html(body):
 
 #returns the key results from a speedtest, such as download/upload, isp name, ping
 def speed_test():
-    st = speedtest.Speedtest()
 
+    try:
+        st = speedtest.Speedtest()
+
+    except:
+        return {'download':-1, 'upload':-1, 'isp_name': -1, 'ping': -1, 'client_ip': -1}
     All_Results = st.results.dict()
     print("All results")
     print(All_Results)
-    Download = st.download()
-    Upload = st.upload()
 
-    ISP_name = All_Results.get('client').get('isp')
+    try:
+        Download = st.download()
+    except:
+        Download = -1
+
+    try:
+        Upload = st.upload()
+    except:
+        Upload = -1
+
+    try:
+        ISP_name = All_Results.get('client').get('isp')
+    except:
+        ISP_name = "ERROR In Speedtest"
+
+    try:
+        ping = st.results.dict().get('ping')
+    except:
+        ping = -1
+
+    try:
+        client_ip = st.results.dict().get('client').get('ip')
+    except:
+        client_ip = '-1'
+
     print("st.results.dict()")
     print(st.results.dict())
-    ping = st.results.dict().get('ping')
-    client_ip = st.results.dict().get('client').get('ip')
     return {'download':Download, 'upload':Upload, 'isp_name': ISP_name, 'ping': ping, 'client_ip': client_ip}
 
 
@@ -81,6 +105,8 @@ def requestWebsite(websiteURL, http, https):
     results['BlockPage'] = detectBlockPage(text_from_html(r.text))
     results['CloudflareBlockPage'] = detectCloudFlare(text_from_html(r.text))
     results['Number_of_Script_Tags'] = number_script_tags(r.text)
+    results['html'] = r.text
+
 
     return results
 
@@ -94,7 +120,8 @@ def listOfDNSs():
     DNSList = [MyDNS, AARNet, OptusDNS, GoogleDNS, Cloudflare]
     DNSDict = {'MyDNS':MyDNS, 'AARNet':AARNet, 'OptusDNS':OptusDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
     DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARC', OptusDNS:'Optus', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
-    return DNSList, DNSDict, DNS_IP_Dict
+    DNS_IP_Dict_Default_and_Public_Only = {MyDNS:'MyDNS', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
+    return DNSList, DNSDict, DNS_IP_Dict, DNS_IP_Dict_Default_and_Public_Only
 
 #Return the IP's resolved by every DNS
 def resolveIPFromDNS(hostname, DNSList):
@@ -114,6 +141,9 @@ def resolveIPFromDNS(hostname, DNSList):
         tuple = (DNSIP, ips_record.answer)
         compiledList.append(tuple)
         tuple = ()
+
+    print("CompiledList-----------------------------")
+    print(compiledList)
     return compiledList
 
 
@@ -143,6 +173,7 @@ def scapyTracerouteWithSR(domain):
 #Given a list of IP addresses
 #return the response code, blockpage detection and number of script tags (and maybe html)
 def IPResponseCodesAndText(IPList):
+    print("IPList: "+str(IPList))
     responseCodeList = []
     blockPageList = []
     cloudFlareBlockPageList = []
@@ -157,6 +188,7 @@ def IPResponseCodesAndText(IPList):
         blockPageList.append(detectBlockPage(response.get('Visible_Text')))
         cloudFlareBlockPageList.append(detectCloudFlare(response.get('Visible_Text')))
         number_of_script_tags.append(response.get('number_of_script_tags'))
+
         html.append(response.get('html'))
 
     return {'responseCodeList':responseCodeList, 'blockPageList':blockPageList, 'cloudFlareBlockPageList':cloudFlareBlockPageList, 'number_of_script_tags':number_of_script_tags, 'html':html}
@@ -168,6 +200,7 @@ def getIPResponseCodeAndText(IPAddress):
         return "NaN"
     try:
         #If requests takes longer than 5 seconds to connect, just return Error. Clearly some kind of failed connection
+        print("IP ADDRESS----------------------------------: "+str(IPAddress))
         r = requests.get('http://'+IPAddress, timeout=5)
         return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text), 'number_of_script_tags':number_script_tags(r.text), 'html':r.text}
 
@@ -247,10 +280,6 @@ def convert_list_to_dict(this_list):
 #Returns latitude and longitude based off users IP address
 def get_my_location_from_IP():
     g = geocoder.ip('me')
-    print(type(g.country))
-    print(g.country)
-    print(type(g.latlng))
-    print(g.latlng)
     return {'latitude':g.latlng[0], 'longitude':g.latlng[1], 'country':g.country}
 
 '''

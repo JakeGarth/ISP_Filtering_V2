@@ -70,7 +70,10 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
 
 
+    #3 is for default and public DNS's only
     dns_ips = listOfDNSs()[1]
+    print("DNS IPS------------------------------------")
+    print(dns_ips)
     #this takes care of adding all the DNS's to the database
     for DNS in dns_ips:
         dns_address = dns_ips.get(DNS)
@@ -88,6 +91,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
     #Adds 5 instances of the domain to the databse, one for each DNS
     for domain in list_of_domain_objects:
+
         domain_name = domain.domain
         response_code = domain.responseCode
         Traceroute = ' '.join([str(addr) for addr in domain.Traceroute])
@@ -99,9 +103,14 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         if domain.domainBlockPage == True:
             blockpage = 1
         number_script_tags = domain.Number_of_Script_Tags
+        domain_html = db.escape(domain.domain_html.encode(encoding = "utf-8"))
+
 
         DNS_ID_List_In_Database = {}
         for DNS in dns_ips:
+
+            print("DNS IPS a second time -----------------")
+            print(DNS)
             #Gets most recently added DNS servers
             sql = '''
             (SELECT id FROM DNS WHERE (dns_name = '%s'))''' % (DNS)
@@ -113,10 +122,9 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
             #Inserts the domains each associated with each DNS
             sql = '''
-            insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID, number_of_script_tags)
-            values('%s', '%s', '%s', '%s', '%s','%s', '%s', '%s')''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID, number_script_tags)
-            print("SQL: ")
-            print(sql)
+            insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID, number_of_script_tags, html_returned)
+            values('%s', '%s', '%s', '%s', '%s','%s', '%s', '%s', %s)''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID, number_script_tags, domain_html)
+
             cursor.execute(sql)
             domainID = cursor.lastrowid
             DNS_ID_List_In_Database[DNS] = domainID
@@ -124,24 +132,53 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
 
         #list of all IPs returned by all the DNSs
+        print("domain.Resolved_IPs")
+        print(domain.Resolved_IPs)
         All_IPs_From_All_DNS = convert_list_to_dict(domain.Resolved_IPs)
-        ip_to_dns_dict = listOfDNSs()[2]
+        #2 is all DNS's in list
+        #ip_to_dns_dict = listOfDNSs()[2]
+        #3 is only default DNS and Google and Cloudlfare, i.e. public
+        ip_to_dns_dict = listOfDNSs()[3]
 
+        print("All_IPs_From_All_DNS---------------")
+        print(All_IPs_From_All_DNS)
+
+        #Removing non-public DNS's - this is a temproary fix
+        All_IPs_From_All_DNS.pop('10.127.5.17', None)
+        All_IPs_From_All_DNS.pop('192.168.43.202', None)
 
         #This code inserts the IP requests in to the database
         for dns_ip in All_IPs_From_All_DNS:
             #gathers all the results for each DNS
+
+
             dns_ip = dns_ip
             dns_name = ip_to_dns_dict.get(dns_ip)
+
             response_code_list = domain.Response_Code_Different_DNS_List().get(dns_name)
             ip_blockpage_list = domain.IPBlockPageList().get(dns_name)
             ip_cloudflare_blockpage_list = domain.IPCloudFlareBlockPageList().get(dns_name)
             ip_html_list = domain.IPHTMLPageList().get(dns_name)
             Number_of_Scripts_List = domain.Number_of_Scripts_Different_DNS_List.get(dns_name)
 
+            print("All_IPs_From_All_DNS")
+            print(All_IPs_From_All_DNS)
+            print("response_code_list")
+            print(response_code_list)
+            print("ip_blockpage_list")
+            print(ip_blockpage_list)
+
+            print("DNS NAME")
+            print(dns_name)
+
+
             count_position_of_ip = 0
             #iterates through all IP's for a given DNS
             for ip in All_IPs_From_All_DNS.get(dns_ip):
+                print("dns_ip")
+                print(dns_ip)
+                print("Ip")
+                print(ip)
                 #Gathers results for that IP
                 response_code = response_code_list[count_position_of_ip] #fix this
                 blockpage = ip_blockpage_list[count_position_of_ip]
@@ -167,9 +204,10 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
                     insert into Request(address, DNS_DELETELATER, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags, html_returned)
                     values('%s', '%s', '%s', '%s', '%s', '%s', '%s', %s)''' % (ip, dns_name, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags, html_safe_for_MySQL)
 
-                print(sql)
+                print("Inserted :"+str(ip))
                 cursor.execute(sql)
                 db.commit()
+    db.close()
 
 def main():
     convert_domain_to_database(domain_obj = None, isp_name = "TEST_31_May")

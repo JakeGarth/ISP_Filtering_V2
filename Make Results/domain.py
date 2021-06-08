@@ -6,7 +6,7 @@ class Domain:
     Resolved_IPs = [], Optus_DNS_IPs="", Google_DNS="", Cloudflare_DNS="", Response_Code_Different_DNS_List={},AARC_DNS_Response_Code="", Optus_DNS_Response_Code="",Google_DNS_Response_Code="", Cloudflare_DNS_Response_Code="",
     Block_Page_Different_DNS_List ={}, AARC_DNS_Block_Page = "", Optus_DNS_Block_Page = "", Google_DNS_Block_Page = "", Cloudflare_DNS_Block_Page = "", domainBlockPage="",Cloudflare_Block_Page_Different_DNS_List = {},domainCloudFlareBlockPage="",
     AARC_DNS_Cloudflare_Block_Page = "", Optus_DNS_Cloudflare_Block_Page = "", Google_DNS_Cloudflare_Block_Page = "", Cloudflare_DNS_Cloudflare_Block_Page = "", Default_DNS_Block_Page = [], Default_DNS_Cloudflare_Block_Page = [], Number_of_Script_Tags = -1,
-    Number_of_Scripts_Different_DNS_List = {}, AARC_DNS_Number_of_Script_Tags = "", Optus_DNS_Number_of_Script_Tags = "", Google_DNS_Number_of_Script_Tags = "", Cloudflare_DNS_Number_of_Script_Tags = "", Default_DNS_Number_of_Script_Tags = ""):
+    Number_of_Scripts_Different_DNS_List = {}, AARC_DNS_Number_of_Script_Tags = "", Optus_DNS_Number_of_Script_Tags = "", Google_DNS_Number_of_Script_Tags = "", Cloudflare_DNS_Number_of_Script_Tags = "", Default_DNS_Number_of_Script_Tags = "", domain_html=""):
 
 
         #All results is the results from every IP address checked from every DNS. Raw data.
@@ -53,6 +53,14 @@ class Domain:
         else:
             self.Number_of_Script_Tags = Number_of_Script_Tags
 
+
+        if domain_html == "":
+            self.domain_html = self.domainResults.get('html')
+        else:
+            self.domain_html = domain_html
+
+
+
         #Returns the DNS IP address.
         if ISP_DNS == "":
             self.ISP_DNS = self.return_DNS()
@@ -65,6 +73,8 @@ class Domain:
             if isinstance(ipList, str):
                 ipList = ipList.replace("[","").replace("]","").replace(" ","").replace("'","").split(";")
             self.ISP_DNS_IPS = ipList
+            print("ISP_DNS_IPS")
+            print(self.ISP_DNS_IPS)
         else:
             try:
                 ipList = ISP_DNS_IPS
@@ -87,8 +97,11 @@ class Domain:
         #Define IP's for every DNS
         if Resolved_IPs == []:
             self.Resolved_IPs = self.return_IPs_Different_DNS()
+
         else:
             self.Resolved_IPs = Resolved_IPs
+
+
 
         if AARC_DNS_IPs == "":
             self.AARC_DNS_IPs = self.Resolved_IPs[1][1]
@@ -289,16 +302,34 @@ class Domain:
         try:
             results = requestWebsite(self.domainNoHTTP, http, https)
 
-            return {'ResponseCode':results.get('ResponseCode'), 'BlockPage':results.get('BlockPage'), 'CloudflareBlockPage':results.get('CloudflareBlockPage'), 'Number_of_Script_Tags':results.get('Number_of_Script_Tags')}
+            return {'ResponseCode':results.get('ResponseCode'), 'BlockPage':results.get('BlockPage'), 'CloudflareBlockPage':results.get('CloudflareBlockPage'), 'Number_of_Script_Tags':results.get('Number_of_Script_Tags'), 'html':results.get('html')}
         except Exception as e:
 
             errorMessage = str(e).replace(',',';')
-            return {'ResponseCode':'ERROR', 'BlockPage':"N/A", 'CloudflareBlockPage':"N/A", 'Number_of_Script_Tags':"N/A"}
+            return {'ResponseCode':'ERROR', 'BlockPage':"N/A", 'CloudflareBlockPage':"N/A", 'Number_of_Script_Tags':"N/A", 'html':"N/A"}
 
 
     #Returns the IP's resolved for every DNS as a list
     def return_IPs_Different_DNS(self):
         DifferentDNSIPs = resolveIPFromDNS(self.domainNoHTTPNoSlashNoWWW, listOfDNSs()[0])
+
+        print("DifferentDNSIPs")
+        print(DifferentDNSIPs)
+
+        print("listOfDNSs()[1]")
+        print(listOfDNSs()[1])
+        myDNSIP = listOfDNSs()[1].get('MyDNS')
+        print("myDNSIP")
+        print(myDNSIP)
+        for DNS in range(0, len(DifferentDNSIPs)):
+            print("DifferentDNSIPs[DNS][0]")
+            print(DifferentDNSIPs[DNS][0])
+            if DifferentDNSIPs[DNS][0] == myDNSIP:
+                DifferentDNSIPs[DNS] = (myDNSIP, self.ISP_DNS_IPS)
+
+        print("DifferentDNSIPs")
+        print(DifferentDNSIPs)
+
         return DifferentDNSIPs
 
 

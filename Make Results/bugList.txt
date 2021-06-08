@@ -1,6 +1,5 @@
 To Do
 
-- include a way to store the html in database. AWS S3?
 
 - might need to do some kind of last insert to make sure there is no concurrency issues with inserting.
 
@@ -12,6 +11,7 @@ To Do
 
 - make the DNS's being checked scalable?
 
+- not saving MyDNS or Optus when using the uni's wifi
 
 Fixed
 - something weird is happening where it isn't inserting the MyDNS results in to the Database - Fixed.
@@ -26,6 +26,8 @@ Fixed
   - currently it is putting MyDNS script tags for all domains
   - I actually don't think this is an issue, because the individual IP's are collecting the right number of script tags
   - fixed by just doing a -1 to represent that there was no need to collect those script tags - DIDNT DO THIS, DECIDED AGAINST IT
+
+- just stored the text in the MySQL
 
 Dismissed
 
