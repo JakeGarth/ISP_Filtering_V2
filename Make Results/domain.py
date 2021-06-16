@@ -73,7 +73,7 @@ class Domain:
             if isinstance(ipList, str):
                 ipList = ipList.replace("[","").replace("]","").replace(" ","").replace("'","").split(";")
             self.ISP_DNS_IPS = ipList
-            print("ISP_DNS_IPS")
+            print("ISP_DNS_IPS--------------------------------------------------------JAKE HERE 1")
             print(self.ISP_DNS_IPS)
         else:
             try:

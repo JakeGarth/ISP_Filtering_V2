@@ -1,1 +1,10 @@
-ISP, domain, technique
+ISP,Domain,Response_Code,200_Response_Code_Anywhere,Number_Script_Tags,Number_Script_Tags_Is_Consensus,Public DNS Matches Default DNS,Default_DNS_IP_Script Tags,Blocked, Technique
+Telstra,a.com,200,Yes,7,Yes,Yes,7,No,-
+Telstra,b.net,200,Yes,10,Yes,Yes,10,No,-
+Telstra,c.au,200,Yes,13,Yes,Yes,13,No,-
+Optus,a.com,200,Yes,7,Yes,Yes,7,No,-
+Optus,b.net,200,Yes,10,Yes,Yes,10,No,-
+Optus,c.au,200,Yes,13,Yes,Yes,13,No,-
+AARC,a.com,403,Yes,0,No,No,0,Yes,DNS Poison
+AARC,b.net,403,Yes,0,No,Yes,10,Yes,IP Blocking
+AARC,c.au,403,Yes,0,No,Yes,0,Yes,Domain Blocking

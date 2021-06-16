@@ -105,12 +105,14 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         number_script_tags = domain.Number_of_Script_Tags
         domain_html = db.escape(domain.domain_html.encode(encoding = "utf-8"))
 
+        print("DOMAINS DEFAULT DNS IPS-------------------------------------------------------JAKE HERE 2")
+        print(domain.ISP_DNS_IPS)
+
+        
 
         DNS_ID_List_In_Database = {}
         for DNS in dns_ips:
 
-            print("DNS IPS a second time -----------------")
-            print(DNS)
             #Gets most recently added DNS servers
             sql = '''
             (SELECT id FROM DNS WHERE (dns_name = '%s'))''' % (DNS)
@@ -121,6 +123,8 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
             DNS_ID = DNS_IDs[-1][0]
 
             #Inserts the domains each associated with each DNS
+
+
             sql = '''
             insert into Domain(domain_name, response_code, Traceroute , Number_of_Hops, cloudflare_blockpage, blockpage, dnsID, number_of_script_tags, html_returned)
             values('%s', '%s', '%s', '%s', '%s','%s', '%s', '%s', %s)''' % (domain_name, response_code, Traceroute, Number_of_Hops, cloudflare_blockpage, blockpage, DNS_ID, number_script_tags, domain_html)
@@ -174,6 +178,10 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
 
             count_position_of_ip = 0
             #iterates through all IP's for a given DNS
+
+            print("List of all IPS")
+            print(str(len(All_IPs_From_All_DNS.get(dns_ip))))
+            print(str(All_IPs_From_All_DNS.get(dns_ip)))
             for ip in All_IPs_From_All_DNS.get(dns_ip):
                 print("dns_ip")
                 print(dns_ip)
