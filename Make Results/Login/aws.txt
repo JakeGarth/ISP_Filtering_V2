@@ -1,7 +1,7 @@
 AWS
-Login: jake.william.garth
-password: Sh..................
+Login: jake.will.....
+pw: S.....................
 
 RDS:
-login: admin
-password: Cyberhub
+Login: admin
+pw: Cyberhub

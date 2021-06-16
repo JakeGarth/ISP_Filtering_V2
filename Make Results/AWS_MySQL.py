@@ -108,7 +108,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         print("DOMAINS DEFAULT DNS IPS-------------------------------------------------------JAKE HERE 2")
         print(domain.ISP_DNS_IPS)
 
-        
+
 
         DNS_ID_List_In_Database = {}
         for DNS in dns_ips:
@@ -138,7 +138,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         #list of all IPs returned by all the DNSs
         print("domain.Resolved_IPs")
         print(domain.Resolved_IPs)
-        All_IPs_From_All_DNS = convert_list_to_dict(domain.Resolved_IPs)
+        All_IPs_From_All_DNS = domain.Resolved_IPs
         #2 is all DNS's in list
         #ip_to_dns_dict = listOfDNSs()[2]
         #3 is only default DNS and Google and Cloudlfare, i.e. public
@@ -147,15 +147,11 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
         print("All_IPs_From_All_DNS---------------")
         print(All_IPs_From_All_DNS)
 
-        #Removing non-public DNS's - this is a temproary fix
-        All_IPs_From_All_DNS.pop('10.127.5.17', None)
-        All_IPs_From_All_DNS.pop('192.168.43.202', None)
+
 
         #This code inserts the IP requests in to the database
         for dns_ip in All_IPs_From_All_DNS:
             #gathers all the results for each DNS
-
-
             dns_ip = dns_ip
             dns_name = ip_to_dns_dict.get(dns_ip)
 

@@ -101,20 +101,17 @@ class Domain:
         else:
             self.Resolved_IPs = Resolved_IPs
 
-
-
-        if AARC_DNS_IPs == "":
-            self.AARC_DNS_IPs = self.Resolved_IPs[1][1]
-        else:
-            self.AARC_DNS_IPs = AARC_DNS_IPs
-
-        if Optus_DNS_IPs == "":
-            self.Optus_DNS_IPs = self.Resolved_IPs[2][1]
-        else:
-            self.Optus_DNS_IPs = Optus_DNS_IPs
-
         if Google_DNS == "":
-            self.Google_DNS = self.Resolved_IPs[3][1]
+            print("Resolved_IPs")
+            print(Resolved_IPs)
+            print("listOfDNSs()[1]")
+            print(listOfDNSs()[1])
+            print("listOfDNSs()[2].get('Google')")
+            print(listOfDNSs()[2].get('Google'))
+
+            self.Google_DNS = self.Resolved_IPs.get(listOfDNSs()[1].get('GoogleDNS'))
+            print("self.Google_DNS----------------")
+            print(self.Google_DNS)
         else:
             try:
                 ipList = []
@@ -127,7 +124,9 @@ class Domain:
                 self.Google_DNS = Google_DNS
 
         if Cloudflare_DNS == "":
-            self.Cloudflare_DNS = self.Resolved_IPs[4][1]
+            self.Cloudflare_DNS = self.Resolved_IPs.get(listOfDNSs()[1].get('Cloudflare'))
+            print("self.Cloudflare_DNS----------------")
+            print(self.Cloudflare_DNS)
         else:
             try:
                 ipList = []
@@ -167,16 +166,6 @@ class Domain:
         else:
             self.Response_Code_Different_DNS_List = Response_Code_Different_DNS_List
 
-        if AARC_DNS_Response_Code == "":
-            self.AARC_DNS_Response_Code = self.IPCloudFlareBlockPageList().get('AARC')
-        else:
-            self.AARC_DNS_Response_Code = AARC_DNS_Response_Code
-
-        if Optus_DNS_Response_Code == "":
-            self.Optus_DNS_Response_Code = self.IPCloudFlareBlockPageList().get('Optus')
-        else:
-            self.Optus_DNS_Response_Code = Optus_DNS_Response_Code
-
         if Google_DNS_Response_Code == "":
             self.Google_DNS_Response_Code = self.IPCloudFlareBlockPageList().get('Google')
         else:
@@ -197,17 +186,6 @@ class Domain:
         else:
             self.Block_Page_Different_DNS_List = Block_Page_Different_DNS_List
 
-        #Gets block pages for every IP from AARC
-        if AARC_DNS_Block_Page == "":
-            self.AARC_DNS_Block_Page = self.IPBlockPageList().get('AARC')
-        else:
-            self.AARC_DNS_Block_Page = AARC_DNS_Block_Page
-
-        #Gets block pages for every IP from Optus
-        if Optus_DNS_Block_Page == "":
-            self.Optus_DNS_Block_Page = self.IPBlockPageList().get('Optus')
-        else:
-            self.Optus_DNS_Block_Page = Optus_DNS_Block_Page
 
         #Gets block pages for every IP from Google
         if Google_DNS_Block_Page == "":
@@ -228,16 +206,6 @@ class Domain:
             self.Cloudflare_Block_Page_Different_DNS_List = self.IPCloudFlareBlockPageList()
         else:
             self.Cloudflare_Block_Page_Different_DNS_List = Cloudflare_Block_Page_Different_DNS_List
-
-        if AARC_DNS_Cloudflare_Block_Page == "":
-            self.AARC_DNS_Cloudflare_Block_Page = self.Cloudflare_Block_Page_Different_DNS_List.get('AARC')
-        else:
-            self.AARC_DNS_Cloudflare_Block_Page = AARC_DNS_Cloudflare_Block_Page
-
-        if Optus_DNS_Cloudflare_Block_Page == "":
-            self.Optus_DNS_Cloudflare_Block_Page = self.Cloudflare_Block_Page_Different_DNS_List.get('Optus')
-        else:
-            self.Optus_DNS_Cloudflare_Block_Page = Optus_DNS_Cloudflare_Block_Page
 
         if Google_DNS_Cloudflare_Block_Page == "":
             self.Google_DNS_Cloudflare_Block_Page = self.Cloudflare_Block_Page_Different_DNS_List.get('Google')
@@ -260,15 +228,6 @@ class Domain:
 
 
         #Returns all the IP's that have cloudflare_block_pages
-        if AARC_DNS_Cloudflare_Block_Page == "":
-            self.AARC_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('AARC')
-        else:
-            self.AARC_DNS_Number_of_Script_Tags = AARC_DNS_Number_of_Script_Tags
-
-        if Optus_DNS_Cloudflare_Block_Page == "":
-            self.Optus_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('Optus')
-        else:
-            self.Optus_DNS_Number_of_Script_Tags = Optus_DNS_Number_of_Script_Tags
 
         if Google_DNS_Cloudflare_Block_Page == "":
             self.Google_DNS_Number_of_Script_Tags = self.Number_of_Scripts_Different_DNS_List.get('Google')
@@ -312,37 +271,33 @@ class Domain:
     #Returns the IP's resolved for every DNS as a list
     def return_IPs_Different_DNS(self):
         DifferentDNSIPs = resolveIPFromDNS(self.domainNoHTTPNoSlashNoWWW, listOfDNSs()[0])
-
-        print("DifferentDNSIPs")
-        print(DifferentDNSIPs)
-
-        print("listOfDNSs()[1]")
-        print(listOfDNSs()[1])
         myDNSIP = listOfDNSs()[1].get('MyDNS')
         print("myDNSIP")
         print(myDNSIP)
+        IPs_per_DNS = {}
+
         for DNS in range(0, len(DifferentDNSIPs)):
-            print("DifferentDNSIPs[DNS][0]")
-            print(DifferentDNSIPs[DNS][0])
+
             if DifferentDNSIPs[DNS][0] == myDNSIP:
-                DifferentDNSIPs[DNS] = (myDNSIP, self.ISP_DNS_IPS)
+                IPs_per_DNS[myDNSIP] = self.ISP_DNS_IPS
+            else:
+                IPs_per_DNS[DifferentDNSIPs[DNS][0]] = DifferentDNSIPs[DNS][1]
 
         print("DifferentDNSIPs")
         print(DifferentDNSIPs)
+        print("IPs_per_DNS")
+        print(IPs_per_DNS)
 
-        return DifferentDNSIPs
+        return IPs_per_DNS
 
 
     #Defines the __all_results variable to contain response_code, blockpages and number script tags for every IP
     def set_IP_All_Blockpages_All_Responses(self):
         MyDNS_results = IPResponseCodesAndText(self.ISP_DNS_IPS)
-        AARC_results =  IPResponseCodesAndText(self.AARC_DNS_IPs)
-        Optus_results = IPResponseCodesAndText(self.Optus_DNS_IPs)
         Google_results = IPResponseCodesAndText(self.Google_DNS)
         Cloudflare_results = IPResponseCodesAndText(self.Cloudflare_DNS)
 
-        self.__all_results = {'MyDNS': MyDNS_results, 'AARC':AARC_results, 'Optus':Optus_results,
-        'Google':Google_results, 'Cloudflare':Cloudflare_results}.copy()
+        self.__all_results = {'MyDNS': MyDNS_results, 'Google':Google_results, 'Cloudflare':Cloudflare_results}.copy()
 
     #Return __all_results
     def get_IP_All_Blockpages_All_Responses(self):
@@ -352,7 +307,7 @@ class Domain:
     def NumberScriptTagList(self):
         results = self.get_IP_All_Blockpages_All_Responses()
 
-        number_script_tags_results = {'MyDNS':results.get('MyDNS').get('number_of_script_tags'), 'AARC': results.get('AARC').get('number_of_script_tags'), 'Optus':results.get('Optus').get('number_of_script_tags'),
+        number_script_tags_results = {'MyDNS':results.get('MyDNS').get('number_of_script_tags'),
         'Google':results.get('Google').get('number_of_script_tags'), 'Cloudflare':results.get('Cloudflare').get('number_of_script_tags')}
         return number_script_tags_results
 
@@ -360,7 +315,7 @@ class Domain:
     def IPResponseCodesList(self):
         results = self.get_IP_All_Blockpages_All_Responses()
 
-        response_code_results = {'MyDNS':results.get('MyDNS').get('responseCodeList'), 'AARC': results.get('AARC').get('responseCodeList'), 'Optus':results.get('Optus').get('responseCodeList'),
+        response_code_results = {'MyDNS':results.get('MyDNS').get('responseCodeList'),
         'Google':results.get('Google').get('responseCodeList'), 'Cloudflare':results.get('Cloudflare').get('responseCodeList')}
         return response_code_results
 
@@ -369,7 +324,7 @@ class Domain:
 
         results = self.get_IP_All_Blockpages_All_Responses()
 
-        blockpage_results = {'MyDNS':results.get('MyDNS').get('blockPageList'), 'AARC': results.get('AARC').get('blockPageList'), 'Optus':results.get('Optus').get('blockPageList'),
+        blockpage_results = {'MyDNS':results.get('MyDNS').get('blockPageList'),
         'Google':results.get('Google').get('blockPageList'), 'Cloudflare':results.get('Cloudflare').get('blockPageList')}
         return blockpage_results
 
@@ -378,7 +333,7 @@ class Domain:
 
         results = self.get_IP_All_Blockpages_All_Responses()
 
-        cloudflare_blockpage_results = {'MyDNS':results.get('MyDNS').get('cloudFlareBlockPageList'), 'AARC': results.get('AARC').get('cloudFlareBlockPageList'), 'Optus':results.get('Optus').get('cloudFlareBlockPageList'),
+        cloudflare_blockpage_results = {'MyDNS':results.get('MyDNS').get('cloudFlareBlockPageList'),
         'Google':results.get('Google').get('cloudFlareBlockPageList'), 'Cloudflare':results.get('Cloudflare').get('cloudFlareBlockPageList')}
         return cloudflare_blockpage_results
 
@@ -386,7 +341,7 @@ class Domain:
 
         results = self.get_IP_All_Blockpages_All_Responses()
 
-        cloudflare_blockpage_results = {'MyDNS':results.get('MyDNS').get('html'), 'AARC': results.get('AARC').get('html'), 'Optus':results.get('Optus').get('html'),
+        cloudflare_blockpage_results = {'MyDNS':results.get('MyDNS').get('html'),
         'Google':results.get('Google').get('html'), 'Cloudflare':results.get('Cloudflare').get('html')}
         return cloudflare_blockpage_results
 

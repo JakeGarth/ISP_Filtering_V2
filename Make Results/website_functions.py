@@ -113,13 +113,11 @@ def requestWebsite(websiteURL, http, https):
 #This is the list of DNS's we are checking
 def listOfDNSs():
     MyDNS = getMyDNS()
-    AARNet = "10.127.5.17"
-    OptusDNS = "192.168.43.202"
     GoogleDNS = "8.8.8.8"
     Cloudflare = "1.1.1.1"
-    DNSList = [MyDNS, AARNet, OptusDNS, GoogleDNS, Cloudflare]
-    DNSDict = {'MyDNS':MyDNS, 'AARNet':AARNet, 'OptusDNS':OptusDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
-    DNS_IP_Dict = {MyDNS:'MyDNS', AARNet:'AARC', OptusDNS:'Optus', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
+    DNSList = [MyDNS, GoogleDNS, Cloudflare]
+    DNSDict = {'MyDNS':MyDNS, 'GoogleDNS':GoogleDNS, 'Cloudflare':Cloudflare}
+    DNS_IP_Dict = {MyDNS:'MyDNS', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
     DNS_IP_Dict_Default_and_Public_Only = {MyDNS:'MyDNS', GoogleDNS:'Google', Cloudflare:'Cloudflare'}
     return DNSList, DNSDict, DNS_IP_Dict, DNS_IP_Dict_Default_and_Public_Only
 
