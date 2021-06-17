@@ -17,8 +17,7 @@ To Do
 
 -You can store less html if you only save it once per ISP for the default domain name test (in the Domain table)
 
--Not saving every IP address tested
-  - I think this has been resolved
+
 
 
 Fixed
@@ -40,6 +39,10 @@ Fixed
 - remove Optus and AARC DNS's from DB and also the insertion of 5 domains, only needs to be 3 because AARC and Optus are being no longer put in.
 - push to git, then just delete them from DNS list and see what breaks
 
+
 Dismissed
 
 - might need to make an object for every IP request
+
+-Not saving every IP address tested
+  - I think this has been resolved
