@@ -13,10 +13,9 @@ To Do
 
 - not saving MyDNS or Optus when using the uni's wifi
 
-
-
 -You can store less html if you only save it once per ISP for the default domain name test (in the Domain table)
 
+-Might need to change the names of the sql columns so they align with the csv interpreter
 
 
 
