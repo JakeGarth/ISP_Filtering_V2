@@ -4,7 +4,10 @@ import pandas as pd
 import numpy as np
 import math
 import json
+from itertools import product
 
+
+#Code for penultimate analysis ---------------------------------
 def get_results_from_CSV(filename):
     return pd.read_csv(filename)
 
@@ -149,8 +152,6 @@ def detect_IP_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
                 insert_into_dataframe('default_dns_returns_different_ip_addresses',index,default_dns_ip_not_in_public_dns,df)
 
 def detect_Sript_Tags_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
-
-
     for domain in list_of_domains:
         for ISP in list_of_ISPs:
             default_dns_script_tags_not_in_public_dns = False
@@ -182,6 +183,10 @@ def detect_Sript_Tags_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
 
             for index in indexes_list:
                 insert_into_dataframe('default_dns_returns_different_script_tags',index,default_dns_script_tags_not_in_public_dns,df)
+
+def detect_if_script_tags_match_other_ISPs():
+    pass
+
 
 
 def insert_if_IP_is_modal(domain_string, modal_ips_list, df):
@@ -231,9 +236,9 @@ def insert_into_dataframe(column_name,row_number,data,df):
 def output_data_frame_to_CSV(filename, df):
     df.to_csv(filename, encoding='utf-8', index=False)
 
-def main():
+def compares_results(input_file, output_file):
     #Reads dataframe from CSV
-    df = get_results_from_CSV('data - test.csv')
+    df = get_results_from_CSV(input_file)
 
     #Inserts additional columns in to dataframe
     prepare_dataframe_for_analysis(df)
@@ -270,8 +275,112 @@ def main():
         modal_ips_list = return_modal_ip_address_returned_by_public_DNSs(domain, df)
         insert_if_IP_is_modal(domain, modal_ips_list, df)
 
-    #puts results to csv
-    output_data_frame_to_CSV("analysis_results.csv", df)
+    #outs results to csv
+    output_data_frame_to_CSV(output_file, df)
+
+    return df
+
+
+
+#Code for final analysis ---------------------------------
+
+def create_empty_dataframe_for_final_analysis():
+    data = {
+    'isp': [],
+	'domain':[],
+    'domain_name_blocking':[],
+    'ip_blocking':[],
+    'dns_poisoned':[],
+    'dns_injection':[]
+    }
+    #create dataframe
+    df = pd.DataFrame(data)
+
+    print(df)
+
+    new_row = {'isp':'Geo', 'domain':87}
+    #append row to the dataframe
+    df = df.append(new_row, ignore_index=True)
+    return df
+
+def get_set_of_combinations_ISP_Domain_from_Intermediate(intermediate_df):
+    list_of_all_combinations_analysed_as_tuples = set()
+    for index, row in intermediate_df.iterrows():
+        isp_domain_tuple = (row['isp_name_speedtest'],row['domain_name'])
+        if isp_domain_tuple not in list_of_all_combinations_analysed_as_tuples:
+            list_of_all_combinations_analysed_as_tuples.add(isp_domain_tuple)
+
+    return list_of_all_combinations_analysed_as_tuples
+
+
+def outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_df):
+    df = create_empty_dataframe_for_final_analysis()
+    ISP_Domain_set = get_set_of_combinations_ISP_Domain_from_Intermediate(intermediate_df)
+
+    #Iterate through set of combos of ISP x Domain
+    for row in ISP_Domain_set:
+        isp_name = row[0]
+        domain_name = row[1]
+        sub_df_indexes = get_all_rows_of_ISP_and_Domain(isp_name, domain_name, intermediate_df)
+        sub_df = intermediate_df.loc[sub_df_indexes]
+
+        print("SUB DF")
+        print(sub_df)
+        domain_name_blocked = detect_domain_name_blocking(sub_df)
+        dns_poisoned = detect_DNS_Poison(sub_df)
+
+        #Need to do some kind of calculations here using the intermediate_df to work out domain blocking etc
+
+        new_row = {'isp':isp_name, 'domain':domain_name, 'domain_name_blocking':domain_name_blocked,
+        'dns_poisoned':dns_poisoned,'ip_blocking': '1', 'dns_injection': '2'}
+
+        df = df.append(new_row, ignore_index=True)
+    print(df)
+    output_data_frame_to_CSV(final_analysis_file, df)
+
+    return df
+
+def detect_domain_name_blocking(sub_df):
+    domain_is_live_anywhere = False
+    domain_request_works = False
+
+    domain_name_blocking_detected = False
+    for index, row in sub_df.iterrows():
+        if (row['domain_is_live_anywhere'] == True
+        and row['domain_request_works'] == False
+        and row['default_dns_returns_different_ip_addresses'] == False):
+            if (row['ip_request_works'] == False and row['ip_is_live_anywhere'] == True):
+                domain_name_blocking_detected = False
+
+            else:
+                domain_name_blocking_detected = True
+                break
+                #return false because this implies IP blocking
+        #need some way to check if the IP works anywhere else, the IP address has to match what the mode is doing,
+        #because, this would imply the IP address is working as intended, but, the domain is now
+
+    return domain_name_blocking_detected
+
+
+def detect_DNS_Poison(sub_df):
+    default_DNS_Poisoned = False
+    for index, row in sub_df.iterrows():
+        if row['default_dns_returns_different_ip_addresses'] == True:
+            default_DNS_Poisoned = True
+            break
+        else:
+            default_DNS_Poisoned = False
+    return default_DNS_Poisoned
+
+
+
+def main():
+    input_file = 'data.csv'
+    output_file = 'analysis_results.csv'
+    final_analysis_file = 'isp_domain.csv'
+    intermediate_df = compares_results(input_file, output_file)
+    outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_df)
+
 
 
 if __name__ == "__main__":
