@@ -1,13 +1,13 @@
 domain_name,response_code,blockpage,cloudflare_blockpage,number_of_script_tags,dns_name,address,ip_response_code,ip_blockpage,ip_cloudflare_blockpage,ip_number_of_script_tags,default_dns,isp_name_speedtest,time_date,domain_is_live_anywhere,domain_request_works,ip_is_live_anywhere,ip_request_works,default_dns_returns_different_ip_addresses,default_dns_returns_different_script_tags,public_dns_ips_not_mode
-https://www.tfp.is/,ERROR,0,0,,GoogleDNS,172.67.223.22,403,False,True,1.0,0,Telstra Internet,7/06/2021 17:47,False,False,False,False,False,,False
-https://www.tfp.is/,ERROR,0,0,,GoogleDNS,104.21.67.129,403,False,True,1.0,0,Telstra Internet,7/06/2021 17:47,False,False,False,False,False,,False
-https://www.tfp.is/,ERROR,0,0,,Cloudflare,104.21.67.129,403,False,True,1.0,0,Telstra Internet,7/06/2021 17:47,False,False,False,False,False,,False
-https://www.tfp.is/,ERROR,0,0,,Cloudflare,172.67.223.22,403,False,True,1.0,0,Telstra Internet,7/06/2021 17:47,False,False,False,False,False,,False
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,MyDNS,199.34.228.53,ERROR,False,False,,0,Optus,8/06/2021 14:43,True,True,False,False,False,,True
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,MyDNS,199.34.228.79,ERROR,False,False,,0,Optus,8/06/2021 14:43,True,True,False,False,False,,False
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,GoogleDNS,199.34.228.54,ERROR,False,False,,0,Optus,8/06/2021 14:43,True,True,False,False,False,,True
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,GoogleDNS,199.34.228.79,ERROR,False,False,,0,Optus,8/06/2021 14:43,True,True,False,False,False,,False
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,MyDNS,199.34.228.53,ERROR,False,False,,0,AARC,8/06/2021 14:43,True,True,False,False,False,,True
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,MyDNS,199.34.228.79,ERROR,False,False,,0,AARC,8/06/2021 14:43,True,True,False,False,False,,False
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,GoogleDNS,199.34.228.54,ERROR,False,False,,0,AARC,8/06/2021 14:43,True,True,False,False,False,,True
-https://yahhooomailspports.weebly.com/,200,0,0,21.0,GoogleDNS,199.34.228.420,ERROR,False,False,,0,AARC,8/06/2021 14:43,True,True,False,False,False,,True
+https://www.tfp.is/,ERROR,0,0,,GoogleDNS,172.67.223.22,403,FALSE,TRUE,1,0,Telstra Internet,7/06/2021 17:47,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+https://www.tfp.is/,ERROR,0,0,,GoogleDNS,104.21.67.129,403,FALSE,TRUE,1,0,Telstra Internet,7/06/2021 17:47,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+https://www.tfp.is/,ERROR,0,0,,Cloudflare,104.21.67.129,403,FALSE,TRUE,1,0,Telstra Internet,7/06/2021 17:47,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+https://www.tfp.is/,ERROR,0,0,,Cloudflare,172.67.223.22,403,FALSE,TRUE,1,0,Telstra Internet,7/06/2021 17:47,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+https://yahhooomailspports.weebly.com/,200,0,0,21,MyDNS,199.34.228.53,ERROR,FALSE,FALSE,5,1,Optus,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+https://yahhooomailspports.weebly.com/,200,0,0,21,MyDNS,199.34.228.79,ERROR,FALSE,FALSE,5,1,Optus,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+https://yahhooomailspports.weebly.com/,200,0,0,21,GoogleDNS,199.34.228.54,ERROR,FALSE,FALSE,9,0,Optus,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+https://yahhooomailspports.weebly.com/,200,0,0,21,GoogleDNS,199.34.228.79,ERROR,FALSE,FALSE,9,0,Optus,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+https://yahhooomailspports.weebly.com/,200,0,0,21,MyDNS,199.34.228.53,ERROR,FALSE,FALSE,,1,AARC,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE
+https://yahhooomailspports.weebly.com/,200,0,0,21,MyDNS,199.34.228.79,ERROR,FALSE,FALSE,,1,AARC,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE
+https://yahhooomailspports.weebly.com/,200,0,0,21,GoogleDNS,199.34.228.54,ERROR,FALSE,FALSE,,0,AARC,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+https://yahhooomailspports.weebly.com/,200,0,0,21,GoogleDNS,199.34.228.420,ERROR,FALSE,FALSE,,0,AARC,8/06/2021 14:43,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE

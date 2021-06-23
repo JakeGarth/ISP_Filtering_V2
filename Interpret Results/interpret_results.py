@@ -1,6 +1,8 @@
 import mysql.connector
 import pymysql
 import pandas as pd
+import numpy as np
+import math
 import json
 
 def get_results_from_CSV(filename):
@@ -36,7 +38,7 @@ def is_domain_cloudflare_blocked(df_row):
 
 def insert_if_domain_live_anywhere(domain_string, df):
     domain_rows = get_all_rows_of_domain(domain_string, df)
-    print(domain_rows)
+
     is_domain_live = False
 
     domain_indexes = df.index[df['domain_name'] == domain_string].tolist()
@@ -56,7 +58,6 @@ def insert_if_domain_request_works(df):
     #iterate over all rows in dataframe
     for row in range(df.index[-1]+1):
 
-        #print(df.index[-1])
         if is_domain_live_from_domain_name_request(df.loc[row]):
             insert_into_dataframe('domain_request_works',row,True,df)
         else:
@@ -115,6 +116,14 @@ def get_list_of_IPs_from_public_dns(indexes_list, df):
     sub_df = df.loc[indexes_list].loc[df['default_dns'] == 0]
     return sub_df['address'].tolist()
 
+def get_list_of_Script_Tags_from_default_dns(indexes_list, df):
+    sub_df = df.loc[indexes_list].loc[df['default_dns'] == 1]
+    return sub_df['ip_number_of_script_tags'].tolist()
+
+def get_list_of_Script_Tags_from_public_dns(indexes_list, df):
+    sub_df = df.loc[indexes_list].loc[df['default_dns'] == 0]
+    return sub_df['ip_number_of_script_tags'].tolist()
+
 
 def detect_IP_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
     for domain in list_of_domains:
@@ -126,8 +135,10 @@ def detect_IP_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
             if len(indexes_list) > 0:
                 default_dns_ips = get_list_of_IPs_from_default_dns(indexes_list, df)
                 public_dns_ips = get_list_of_IPs_from_public_dns(indexes_list, df)
-                default_dns_script_tags = 0
-                public_dns_script_tags = 0
+
+            else:
+                default_dns_ips = []
+                public_dns_ips = []
 
             for ip in default_dns_ips:
 
@@ -137,11 +148,45 @@ def detect_IP_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
             for index in indexes_list:
                 insert_into_dataframe('default_dns_returns_different_ip_addresses',index,default_dns_ip_not_in_public_dns,df)
 
+def detect_Sript_Tags_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df):
+
+
+    for domain in list_of_domains:
+        for ISP in list_of_ISPs:
+            default_dns_script_tags_not_in_public_dns = False
+
+            indexes_list = get_all_rows_of_ISP_and_Domain(ISP, domain, df)
+
+            if len(indexes_list) > 0:
+                default_dns_script_tags = get_list_of_Script_Tags_from_default_dns(indexes_list, df)
+                public_dns_script_tags = get_list_of_Script_Tags_from_public_dns(indexes_list, df)
+
+            else:
+                default_dns_script_tags = []
+                public_dns_script_tags = []
+
+            #Converts NaN's to -1 so they can be compared easily
+            for i in range(len(default_dns_script_tags)):
+                if math.isnan(default_dns_script_tags[i]):
+                    default_dns_script_tags[i] = -1
+
+            #Converts NaN's to -1 so they can be compared easily
+            for i in range(len(public_dns_script_tags)):
+                if math.isnan(public_dns_script_tags[i]):
+                    public_dns_script_tags[i] = -1
+
+
+            for ip in default_dns_script_tags:
+                if ip not in public_dns_script_tags:
+                    default_dns_script_tags_not_in_public_dns = True
+
+            for index in indexes_list:
+                insert_into_dataframe('default_dns_returns_different_script_tags',index,default_dns_script_tags_not_in_public_dns,df)
+
 
 def insert_if_IP_is_modal(domain_string, modal_ips_list, df):
     domain_indexes = df.index[df['domain_name'] == domain_string].tolist()
     for row in domain_indexes:
-
         if df.loc[row]['address'] not in modal_ips_list:
             insert_into_dataframe('public_dns_ips_not_mode', row, 'True', df)
 
@@ -153,8 +198,6 @@ def return_modal_ip_address_returned_by_public_DNSs(domain_string, df):
     #Makes a sub df of all the public dns's that returned an ip for a domain
     sub_df = df.loc[df['domain_name'] == domain_string].loc[df['default_dns'] == 0]
 
-    print("sub_df------------")
-    print(sub_df)
     #get the frequency of each ip
     frequency_series = sub_df['address'].value_counts()
     mode = frequency_series[0]
@@ -163,14 +206,7 @@ def return_modal_ip_address_returned_by_public_DNSs(domain_string, df):
     #return the most frequent in a list
     modal_ips = [k for k,v in dict.items() if float(v) == mode]
 
-    print("domain: "+domain_string+" dict: "+str(dict)+" modal_ips: "+str(modal_ips))
-
     return modal_ips
-
-
-
-
-
 
 
 def prepare_dataframe_for_analysis(df):
@@ -226,15 +262,16 @@ def main():
     #Detects if DNS is poisoned
     detect_IP_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df)
 
+    #Detects if there is a mismatch between default DNS number of script tags and public DNS
+    detect_Sript_Tags_not_in_non_default_DNS(list_of_domains, list_of_ISPs, df)
+
     #gets list of mode of ip addresses returned by public DNS's across all ISPs
     for domain in list_of_domains:
         modal_ips_list = return_modal_ip_address_returned_by_public_DNSs(domain, df)
         insert_if_IP_is_modal(domain, modal_ips_list, df)
 
-
     #puts results to csv
     output_data_frame_to_CSV("analysis_results.csv", df)
-
 
 
 if __name__ == "__main__":
