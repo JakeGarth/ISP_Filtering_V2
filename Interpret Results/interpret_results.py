@@ -368,15 +368,13 @@ def outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_
         sub_df_indexes = get_all_rows_of_ISP_and_Domain(isp_name, domain_name, intermediate_df)
         sub_df = intermediate_df.loc[sub_df_indexes]
 
-
         domain_name_blocked = detect_domain_name_blocking(sub_df)
         dns_poisoned = detect_DNS_Poison(sub_df)
         IP_blocking = detect_IP_Blocking(sub_df)
-
-        #Need to do some kind of calculations here using the intermediate_df to work out domain blocking etc
+        dns_injection = detect_DNS_Injection(sub_df)
 
         new_row = {'isp':isp_name, 'domain':domain_name, 'domain_name_blocking':domain_name_blocked,
-        'dns_poisoned':dns_poisoned,'ip_blocking': IP_blocking, 'dns_injection': '2'}
+        'dns_poisoned':dns_poisoned,'ip_blocking': IP_blocking, 'dns_injection': dns_injection}
 
         df = df.append(new_row, ignore_index=True)
     print(df)
@@ -433,14 +431,14 @@ def detect_IP_Blocking(sub_df):
 
 def detect_DNS_Injection(sub_df):
     #DO SOMETHING HERE JAKE
-    default_DNS_Poisoned = False
+    DNS_injection = False
     for index, row in sub_df.iterrows():
-        if row['default_dns_returns_different_ip_addresses'] == True:
-            default_DNS_Poisoned = True
+        #Checks if the DNS is a public DNS, and also whether the public DNS returns a non-modal IP
+        if row['default_dns'] == 0 and row['public_dns_ips_not_mode'] == True:
+            DNS_injection = True
             break
-        else:
-            default_DNS_Poisoned = False
-    return default_DNS_Poisoned
+
+    return DNS_injection
 
 
 
