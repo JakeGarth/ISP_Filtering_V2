@@ -28,6 +28,7 @@ def is_domain_live_from_domain_name_request(df_row):
         return True
 
 def is_domain_live_from_IP_request(df_row):
+
     if df_row.ip_response_code != '200' or df_row.ip_blockpage == True or df_row.ip_cloudflare_blockpage == True:
         return False
     else:
@@ -66,21 +67,51 @@ def insert_if_domain_request_works(df):
         else:
             insert_into_dataframe('domain_request_works',row,False,df)
 
-#in progress - need to make it so
-def insert_if_IP_live_anywhere(IP_string, df):
+def get_all_rows_ignoring_ISP(ignored_ISP, df):
+    ignored_ISP_df = df.loc[df['isp_name_speedtest'] != ignored_ISP]
+    return df.loc[df['isp_name_speedtest'] != ignored_ISP]
+
+def insert_if_IP_live_other_ISP(IP_string, ignored_ISP,df):
+
     IP_rows = get_all_rows_of_IP(IP_string, df)
 
-    is_IP_live = False
+    #IP_rows = get_all_rows_ignoring_ISP(ignored_ISP, IP_rows)
+
+    is_IP_live_in_other_ISP = False
+    IP_indexes = IP_rows.index.tolist()
 
 
-    IP_indexes = df.index[df['address'] == IP_string].tolist()
 
 
     for row in IP_indexes:
+        if is_domain_live_from_IP_request(IP_rows.loc[row]) == True and IP_rows.loc[row]['isp_name_speedtest'] != ignored_ISP:
+
+            is_IP_live_in_other_ISP = True
+            break
+            #isn't going to work because what if is_doman_live is false in first instance, need to make list and return it at the end
+
+    for row in IP_indexes:
+
+        insert_into_dataframe(column_name = 'ip_is_live_in_other_ISPs', row_number = row, data = is_IP_live_in_other_ISP, df=df)
+    #List of results
+    #Return array of results for each row
+
+    return is_IP_live_in_other_ISP
+
+def insert_if_IP_live_anywhere(IP_string, df):
+    IP_rows = get_all_rows_of_IP(IP_string, df)
+
+
+    is_IP_live = False
+    IP_indexes = df.index[df['address'] == IP_string].tolist()
+
+    for row in IP_indexes:
+
         if is_domain_live_from_IP_request(IP_rows.loc[row]) == True:
             is_IP_live = True
             break
             #isn't going to work because what if is_doman_live is false in first instance, need to make list and return it at the end
+        #raise ValueError
 
     for row in IP_indexes:
 
@@ -103,6 +134,10 @@ def get_all_rows_of_domain(domain_string, df):
 
 def get_all_rows_of_IP(IP_string, df):
     return df.loc[df['address'] == IP_string]
+
+def get_all_rows_of_ISP(ISP_string, df):
+    return df.loc[df['isp_name_speedtest'] == ISP_string]
+
 
 def get_all_rows_of_ISP_and_Domain(ISP_string, Domain_string, df):
     sub_df = df.loc[df['domain_name'] == Domain_string].loc[df['isp_name_speedtest'] == ISP_string]
@@ -222,6 +257,7 @@ def prepare_dataframe_for_analysis(df):
     df['domain_is_live_anywhere'] = ""
     df['domain_request_works'] = ""
     df['ip_is_live_anywhere'] = ""
+    df['ip_is_live_in_other_ISPs'] = ""
     df['ip_request_works'] = ""
     df['default_dns_returns_different_ip_addresses'] = ""
     df['default_dns_returns_different_script_tags'] = ""
@@ -261,6 +297,14 @@ def compares_results(input_file, output_file):
     for IP in list_of_IPs:
         is_IP_live_anywhere = insert_if_IP_live_anywhere(IP, df)
 
+    #Insert in to df whether the IP has been found to be live in any other ISP
+    for IP in list_of_IPs:
+        for ISP in list_of_ISPs:
+
+            is_IP_live_anywhere = insert_if_IP_live_other_ISP(IP, ISP, df)
+
+
+
     #inserts in to df whether the IP request works
     insert_if_IP_request_works(df)
 
@@ -282,7 +326,7 @@ def compares_results(input_file, output_file):
 
 
 
-#Code for final analysis ---------------------------------
+#Code for final analysis --------------------------------------------------------------
 
 def create_empty_dataframe_for_final_analysis():
     data = {
@@ -296,7 +340,7 @@ def create_empty_dataframe_for_final_analysis():
     #create dataframe
     df = pd.DataFrame(data)
 
-    print(df)
+
 
     new_row = {'isp':'Geo', 'domain':87}
     #append row to the dataframe
@@ -324,15 +368,15 @@ def outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_
         sub_df_indexes = get_all_rows_of_ISP_and_Domain(isp_name, domain_name, intermediate_df)
         sub_df = intermediate_df.loc[sub_df_indexes]
 
-        print("SUB DF")
-        print(sub_df)
+
         domain_name_blocked = detect_domain_name_blocking(sub_df)
         dns_poisoned = detect_DNS_Poison(sub_df)
+        IP_blocking = detect_IP_Blocking(sub_df)
 
         #Need to do some kind of calculations here using the intermediate_df to work out domain blocking etc
 
         new_row = {'isp':isp_name, 'domain':domain_name, 'domain_name_blocking':domain_name_blocked,
-        'dns_poisoned':dns_poisoned,'ip_blocking': '1', 'dns_injection': '2'}
+        'dns_poisoned':dns_poisoned,'ip_blocking': IP_blocking, 'dns_injection': '2'}
 
         df = df.append(new_row, ignore_index=True)
     print(df)
@@ -363,6 +407,32 @@ def detect_domain_name_blocking(sub_df):
 
 
 def detect_DNS_Poison(sub_df):
+    default_DNS_Poisoned = False
+    for index, row in sub_df.iterrows():
+        if row['default_dns_returns_different_ip_addresses'] == True:
+            default_DNS_Poisoned = True
+            break
+        else:
+            default_DNS_Poisoned = False
+    return default_DNS_Poisoned
+
+def detect_IP_Blocking(sub_df):
+
+    #DO SOMETHING HERE JAKE
+    IP_Blocked = False
+
+    for index, row in sub_df.iterrows():
+        #Checks if the domain doesnt work but was found to work elsewhere - might need to get rid of this
+        if (row['domain_request_works'] == False and row['domain_is_live_anywhere'] == True):
+            #Checks if IP address is blocked too, and IP was found to work somewhere else
+            if (row['ip_request_works'] == False and row['ip_is_live_in_other_ISPs'] == True):
+                IP_Blocked = True
+                break
+    return IP_Blocked
+
+
+def detect_DNS_Injection(sub_df):
+    #DO SOMETHING HERE JAKE
     default_DNS_Poisoned = False
     for index, row in sub_df.iterrows():
         if row['default_dns_returns_different_ip_addresses'] == True:

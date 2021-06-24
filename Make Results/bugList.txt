@@ -17,6 +17,12 @@ To Do
 
 -Might need to change the names of the sql columns so they align with the csv interpreter
 
+-Need to update the blockpage text requirements so it meets telstra:
+    Content Denied
+    Access to this website has been disabled by an order of the Federal Court of Australia because it infringes or facilitates the infringement of copyright.
+
+    1800 086 346 for information.
+
 
 
 Fixed
