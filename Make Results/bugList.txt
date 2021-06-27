@@ -11,11 +11,9 @@ To Do
 
 - make the DNS's being checked scalable? Maybe this involves alot of deleting nonsense variables in the Domain?
 
-- not saving MyDNS or Optus when using the uni's wifi
-
 -You can store less html if you only save it once per ISP for the default domain name test (in the Domain table)
 
--Might need to change the names of the sql columns so they align with the csv interpreter
+
 
 -Need to update the blockpage text requirements so it meets telstra:
     Content Denied
@@ -43,10 +41,11 @@ Fixed
 
 - remove Optus and AARC DNS's from DB and also the insertion of 5 domains, only needs to be 3 because AARC and Optus are being no longer put in.
 - push to git, then just delete them from DNS list and see what breaks
-
+- Might need to change the names of the sql columns so they align with the csv interpreter
 
 Dismissed
 
+- not saving MyDNS or Optus when using the uni's wifi
 - might need to make an object for every IP request
 
 -Not saving every IP address tested

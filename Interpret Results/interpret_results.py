@@ -73,28 +73,29 @@ def get_all_rows_ignoring_ISP(ignored_ISP, df):
 
 def insert_if_IP_live_other_ISP(IP_string, ignored_ISP,df):
 
-    IP_rows = get_all_rows_of_IP(IP_string, df)
+    #get all rows of the IP address
+    Just_IP_rows = get_all_rows_of_IP(IP_string, df)
 
-    #IP_rows = get_all_rows_ignoring_ISP(ignored_ISP, IP_rows)
+    #Get df where IP = IP and ISP != ignored isp
+    IP_rows = get_all_rows_ignoring_ISP(ignored_ISP, Just_IP_rows)
 
+    #default is that the IP is not live in any other ISP's
     is_IP_live_in_other_ISP = False
+
+    #Get list of indexes of rows of the IPs that are in other ISP's
     IP_indexes = IP_rows.index.tolist()
 
 
 
-
     for row in IP_indexes:
-        if is_domain_live_from_IP_request(IP_rows.loc[row]) == True and IP_rows.loc[row]['isp_name_speedtest'] != ignored_ISP:
-
+        #If the IP is found to be live in another ISP, the IP is said to be live in another IPS
+        if (is_domain_live_from_IP_request(IP_rows.loc[row]) == True and IP_rows.loc[row]['isp_name_speedtest'] != ignored_ISP):
             is_IP_live_in_other_ISP = True
             break
-            #isn't going to work because what if is_doman_live is false in first instance, need to make list and return it at the end
 
-    for row in IP_indexes:
-
+    #Insert result only in to the specific ISP being ignored
+    for row in get_all_rows_of_ISP(ignored_ISP, Just_IP_rows).index.tolist():
         insert_into_dataframe(column_name = 'ip_is_live_in_other_ISPs', row_number = row, data = is_IP_live_in_other_ISP, df=df)
-    #List of results
-    #Return array of results for each row
 
     return is_IP_live_in_other_ISP
 
@@ -300,9 +301,10 @@ def compares_results(input_file, output_file):
     #Insert in to df whether the IP has been found to be live in any other ISP
     for IP in list_of_IPs:
         for ISP in list_of_ISPs:
-
             is_IP_live_anywhere = insert_if_IP_live_other_ISP(IP, ISP, df)
 
+    print("DONE")
+    #raise ValueError
 
 
     #inserts in to df whether the IP request works
@@ -391,7 +393,7 @@ def detect_domain_name_blocking(sub_df):
         if (row['domain_is_live_anywhere'] == True
         and row['domain_request_works'] == False
         and row['default_dns_returns_different_ip_addresses'] == False):
-            if (row['ip_request_works'] == False and row['ip_is_live_anywhere'] == True):
+            if (row['ip_request_works'] == False):
                 domain_name_blocking_detected = False
 
             else:
@@ -430,7 +432,7 @@ def detect_IP_Blocking(sub_df):
 
 
 def detect_DNS_Injection(sub_df):
-    #DO SOMETHING HERE JAKE
+
     DNS_injection = False
     for index, row in sub_df.iterrows():
         #Checks if the DNS is a public DNS, and also whether the public DNS returns a non-modal IP
@@ -443,7 +445,7 @@ def detect_DNS_Injection(sub_df):
 
 
 def main():
-    input_file = 'data.csv'
+    input_file = 'data_27_june.csv'
     output_file = 'analysis_results.csv'
     final_analysis_file = 'isp_domain.csv'
     intermediate_df = compares_results(input_file, output_file)
