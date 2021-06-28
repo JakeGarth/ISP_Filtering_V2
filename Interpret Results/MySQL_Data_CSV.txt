@@ -1,0 +1,13 @@
+This is the MySQL code to get the 'data.csv' file needed to run this code
+
+#Run this
+use ISP;
+
+#Then Run this - Returns merged all data, ready for export (so no HTML)
+SELECT d.domain_name, d.response_code, d.blockpage, d.cloudflare_blockpage, d.number_of_script_tags, isp.isp_name_speedtest, isp.time_date, r.address, r.ip_response_code, r.ip_blockpage, r.ip_cloudflare_blockpage, r.ip_number_of_script_tags, dns.dns_name, dns.default_dns  FROM Domain d
+INNER JOIN
+Request r ON r.domainID = d.id
+INNER JOIN
+DNS dns ON d.dnsID = dns.id
+INNER JOIN
+ISP isp ON dns.ispID = isp.id;
