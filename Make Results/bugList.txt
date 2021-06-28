@@ -14,7 +14,6 @@ To Do
 -You can store less html if you only save it once per ISP for the default domain name test (in the Domain table)
 
 
-
 -Need to update the blockpage text requirements so it meets telstra:
     Content Denied
     Access to this website has been disabled by an order of the Federal Court of Australia because it infringes or facilitates the infringement of copyright.

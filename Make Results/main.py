@@ -52,7 +52,7 @@ def main():
     #print("connect to online mysql")
     #print(get_my_location_from_IP())
     #print(speed_test())
-    CalculateListOfDomains("CopyRight_Telstra.txt")
+    CalculateListOfDomains("List_of_Domains.txt")
 
 if __name__ == "__main__":
 
