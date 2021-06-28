@@ -229,10 +229,9 @@ def insert_if_IP_is_modal(domain_string, modal_ips_list, df):
     domain_indexes = df.index[df['domain_name'] == domain_string].tolist()
     for row in domain_indexes:
         if df.loc[row]['address'] not in modal_ips_list:
-            insert_into_dataframe('public_dns_ips_not_mode', row, 'True', df)
-
+            insert_into_dataframe('public_dns_ips_not_mode', row, True, df)
         else:
-            insert_into_dataframe('public_dns_ips_not_mode', row, 'False', df)
+            insert_into_dataframe('public_dns_ips_not_mode', row, False, df)
 
 def return_modal_ip_address_returned_by_public_DNSs(domain_string, df):
 
@@ -241,13 +240,81 @@ def return_modal_ip_address_returned_by_public_DNSs(domain_string, df):
 
     #get the frequency of each ip
     frequency_series = sub_df['address'].value_counts()
+    print(frequency_series)
+
     mode = frequency_series[0]
+    print(mode)
     dict = json.loads(frequency_series.to_json())
 
     #return the most frequent in a list
     modal_ips = [k for k,v in dict.items() if float(v) == mode]
 
     return modal_ips
+
+
+def insert_if_IP_script_tags_is_modal(IP_string, modal_script_tags_list, df):
+
+    IP_indexes = df.index[df['address'] == IP_string].tolist()
+    for row in IP_indexes:
+        if df.loc[row]['ip_number_of_script_tags'] not in modal_script_tags_list:
+            insert_into_dataframe('ip_number_of_script_tags_modal', row, False, df)
+        else:
+            insert_into_dataframe('ip_number_of_script_tags_modal', row, True, df)
+
+
+def return_modal_script_tags_of_ip(IP_string, df):
+
+    #Makes a sub df of all the ips
+    sub_df = df.loc[df['address'] == IP_string]
+
+    #get the frequency of each ip
+    frequency_series = sub_df['ip_number_of_script_tags'].value_counts()
+
+    #if there are no script tags, return an empty list
+    if len(frequency_series.index) == 0:
+        print("IN HERE")
+        modal_script_tags = []
+        return modal_script_tags
+
+    mode = frequency_series.index[0]
+    dict = json.loads(frequency_series.to_json())
+
+    #return the most frequent in a list
+    modal_script_tags = [float(k) for k,v in dict.items() if float(k) == mode]
+
+    return modal_script_tags
+
+def insert_if_Domain_script_tags_is_modal(domain_string, modal_script_tags_list, df):
+
+    IP_indexes = df.index[df['domain_name'] == domain_string].tolist()
+    for row in IP_indexes:
+        if df.loc[row]['number_of_script_tags'] not in modal_script_tags_list:
+            insert_into_dataframe('domain_number_of_script_tags_modal', row, False, df)
+        else:
+            insert_into_dataframe('domain_number_of_script_tags_modal', row, True, df)
+
+
+def return_modal_script_tags_of_domain(domain_string, df):
+
+    #Makes a sub df of all the ips
+    sub_df = df.loc[df['domain_name'] == domain_string]
+
+    #get the frequency of each ip
+    frequency_series = sub_df['number_of_script_tags'].value_counts()
+
+    #if there are no script tags, return an empty list
+    if len(frequency_series.index) == 0:
+        modal_script_tags = []
+        return modal_script_tags
+
+    #Find the mode
+    mode = frequency_series.index[0]
+    dict = json.loads(frequency_series.to_json())
+
+    #find number of script tags that are modal
+    modal_script_tags = [float(k) for k,v in dict.items() if float(k) == mode]
+
+    return modal_script_tags
 
 
 def prepare_dataframe_for_analysis(df):
@@ -263,6 +330,8 @@ def prepare_dataframe_for_analysis(df):
     df['default_dns_returns_different_ip_addresses'] = ""
     df['default_dns_returns_different_script_tags'] = ""
     df['public_dns_ips_not_mode'] = ""
+    df['ip_number_of_script_tags_modal'] = ""
+    df['domain_number_of_script_tags_modal'] = ""
 
 
 def insert_into_dataframe(column_name,row_number,data,df):
@@ -321,6 +390,17 @@ def compares_results(input_file, output_file):
         modal_ips_list = return_modal_ip_address_returned_by_public_DNSs(domain, df)
         insert_if_IP_is_modal(domain, modal_ips_list, df)
 
+    #detects whether domain script tags is the mode for that domain
+    for domain in list_of_domains:
+        modal_domain_script_tags_list = return_modal_script_tags_of_domain(domain, df)
+        insert_if_Domain_script_tags_is_modal(domain, modal_domain_script_tags_list, df)
+
+
+    #detects whether IP script tags is the mode for that IP
+    for IP in list_of_IPs:
+        modal_ip_script_tags_list = return_modal_script_tags_of_ip(IP, df)
+        insert_if_IP_script_tags_is_modal(IP, modal_ip_script_tags_list, df)
+
     #outs results to csv
     output_data_frame_to_CSV(output_file, df)
 
@@ -341,12 +421,6 @@ def create_empty_dataframe_for_final_analysis():
     }
     #create dataframe
     df = pd.DataFrame(data)
-
-
-
-    new_row = {'isp':'Geo', 'domain':87}
-    #append row to the dataframe
-    df = df.append(new_row, ignore_index=True)
     return df
 
 def get_set_of_combinations_ISP_Domain_from_Intermediate(intermediate_df):
@@ -370,6 +444,9 @@ def outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_
         sub_df_indexes = get_all_rows_of_ISP_and_Domain(isp_name, domain_name, intermediate_df)
         sub_df = intermediate_df.loc[sub_df_indexes]
 
+        if(isp_name == 'Australian Academic and Research Network' and domain_name == 'http://laraccount.com/'):
+            print(isp_name+ " "+domain_name)
+            print("------------------------------------------------------------------------------------------------")
         domain_name_blocked = detect_domain_name_blocking(sub_df)
         dns_poisoned = detect_DNS_Poison(sub_df)
         IP_blocking = detect_IP_Blocking(sub_df)
@@ -385,24 +462,34 @@ def outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_
     return df
 
 def detect_domain_name_blocking(sub_df):
-    domain_is_live_anywhere = False
-    domain_request_works = False
-
     domain_name_blocking_detected = False
     for index, row in sub_df.iterrows():
+        print("TYPES --------------")
+        print(type(row['domain_is_live_anywhere']))
+        print(type(row['domain_request_works']))
+        print(type(row['default_dns_returns_different_ip_addresses']))
+        print(type(row['ip_number_of_script_tags_modal']))
+        print(type(row['domain_number_of_script_tags_modal']))
+
+        print(row[['domain_is_live_anywhere', 'domain_request_works', 'default_dns_returns_different_ip_addresses',
+        'ip_number_of_script_tags_modal', 'domain_number_of_script_tags_modal']])
         if (row['domain_is_live_anywhere'] == True
         and row['domain_request_works'] == False
-        and row['default_dns_returns_different_ip_addresses'] == False):
-            if (row['ip_request_works'] == False):
-                domain_name_blocking_detected = False
+        and row['default_dns_returns_different_ip_addresses'] == False
+        and row['ip_number_of_script_tags_modal'] == True
+        and row['domain_number_of_script_tags_modal'] == False):
+            print("RETURNS TRUE-------------------")
+            domain_name_blocking_detected = True
+            break
+        else:
+            print("RETURNS FALSE-------------------")
+            domain_name_blocking_detected = False
 
-            else:
-                domain_name_blocking_detected = True
-                break
+    print("__________________________________________________________________________")
                 #return false because this implies IP blocking
         #need some way to check if the IP works anywhere else, the IP address has to match what the mode is doing,
         #because, this would imply the IP address is working as intended, but, the domain is now
-
+    print("domain_name_blocking_detected: "+str(domain_name_blocking_detected))
     return domain_name_blocking_detected
 
 
@@ -445,9 +532,9 @@ def detect_DNS_Injection(sub_df):
 
 
 def main():
-    input_file = 'data_27_june.csv'
-    output_file = 'analysis_results.csv'
-    final_analysis_file = 'isp_domain.csv'
+    input_file = 'data.csv'
+    output_file = 'intermediate_results.csv'
+    final_analysis_file = 'final_results.csv'
     intermediate_df = compares_results(input_file, output_file)
     outputs_analysis_for_each_domain_each_ISP(final_analysis_file, intermediate_df)
 

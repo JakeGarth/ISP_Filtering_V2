@@ -1,0 +1,593 @@
+domain_name,response_code,blockpage,cloudflare_blockpage,number_of_script_tags,isp_name_speedtest,time_date,address,ip_response_code,ip_blockpage,ip_cloudflare_blockpage,ip_number_of_script_tags,dns_name,default_dns,domain_is_live_anywhere,domain_request_works,ip_is_live_anywhere,ip_is_live_in_other_ISPs,ip_request_works,default_dns_returns_different_ip_addresses,default_dns_returns_different_script_tags,public_dns_ips_not_mode,ip_number_of_script_tags_modal,domain_number_of_script_tags_modal
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.85.65,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.203.15,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.117,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.116,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.116,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.117,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.116,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://www.imovies.cc,200,0,0,5.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.192.117,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://lookmovie.ag,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,185.51.247.239,403,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://lookmovie.ag,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,185.51.247.239,403,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://lookmovie.ag,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,185.51.247.239,403,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.64.163,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.152.196,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.152.196,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.64.163,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.64.163,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://katcr.to/,200,0,0,6.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.152.196,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.160,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.177.245,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.160,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.177.245,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.177.245,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://kat.sx/,200,0,0,10.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.160,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.18.193,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.183.74,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.18.193,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.183.74,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.183.74,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://ibit.to,200,0,0,7.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.18.193,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.209.138,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.82.243,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.209.138,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.82.243,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.82.243,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://onionplay.eu,200,0,0,12.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.209.138,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.77.215,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.211.230,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.77.215,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.211.230,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.77.215,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://torrentquest.com/,200,0,0,0.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.211.230,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.7.61,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.73.111,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.6.61,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.6.61,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.73.111,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.7.61,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.73.111,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.7.61,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://cuevana3.io/,200,0,0,13.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.26.6.61,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.129,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.223.22,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.129,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.223.22,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,172.67.223.22,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://www.tfp.is/,200,0,0,31.0,Australian Academic and Research Network,2021-06-07 17:07:54,104.21.67.129,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.192.116,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.192.117,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.192.116,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.192.117,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,185.51.247.239,403,False,False,0.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://lookmovie.ag,ERROR,0,0,,Optus,2021-06-07 17:27:25,185.51.247.239,403,False,False,0.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.152.196,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.64.163,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.64.163,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.152.196,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.67.160,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.177.245,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.67.160,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.177.245,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.183.74,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.18.193,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.18.193,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.183.74,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.82.243,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.209.138,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.82.243,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.209.138,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.77.215,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.211.230,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.211.230,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.77.215,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.26.7.61,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.26.6.61,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.73.111,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.26.6.61,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.73.111,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.26.7.61,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.190.248,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.106.3.198,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.55.47.48,403,False,False,0.0,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.253.238.204,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.245.151,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,3.25.33.182,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.153.157.207,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.211.83.158,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,13.210.160.129,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.67.129,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.223.22,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,104.21.67.129,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Optus,2021-06-07 17:27:25,172.67.223.22,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.192.116,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.192.117,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.192.117,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.imovies.cc,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.192.116,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://lookmovie.ag,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,False,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,False,True,True,False
+https://lookmovie.ag,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,185.51.247.239,403,False,False,0.0,GoogleDNS,0,True,False,False,False,False,True,False,False,True,False
+https://lookmovie.ag,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,185.51.247.239,403,False,False,0.0,Cloudflare,0,True,False,False,False,False,True,False,False,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.152.196,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.64.163,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.152.196,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://katcr.to/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.64.163,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.67.160,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.177.245,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.177.245,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://kat.sx/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.67.160,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.18.193,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.183.74,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.183.74,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://ibit.to,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.18.193,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.209.138,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.82.243,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.82.243,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://onionplay.eu,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.209.138,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.77.215,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.211.230,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.211.230,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://torrentquest.com/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.77.215,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.73.111,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.26.6.61,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.26.7.61,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.26.6.61,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.26.7.61,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://cuevana3.io/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.73.111,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.164.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,101.167.166.53,200,False,False,0.0,MyDNS,1,True,False,True,False,True,True,True,True,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.223.22,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.67.129,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,104.21.67.129,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://www.tfp.is/,ERROR,0,0,,Telstra Internet,2021-06-07 17:47:30,172.67.223.22,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+http://oazmdon.onzdoma.top,404,0,0,0.0,Optus,2021-06-08 12:50:30,202.95.19.214,200,False,False,0.0,GoogleDNS,0,False,False,True,False,True,False,False,False,True,True
+http://oazmdon.onzdoma.top,404,0,0,0.0,Optus,2021-06-08 12:50:30,202.95.19.214,200,False,False,0.0,Cloudflare,0,False,False,True,False,True,False,False,False,True,True
+http://www.facebook.com/,200,0,0,17.0,Optus,2021-06-08 13:42:30,157.240.8.35,200,False,False,17.0,GoogleDNS,0,True,True,True,False,True,False,False,False,True,True
+http://www.facebook.com/,200,0,0,17.0,Optus,2021-06-08 13:42:30,157.240.8.35,200,False,False,17.0,Cloudflare,0,True,True,True,False,True,False,False,False,True,True
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 13:50:13,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 13:50:13,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 13:50:13,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 13:50:13,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.66.190.248,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,3.106.3.198,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,13.55.47.48,451,True,False,1.0,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.253.238.204,200,False,False,32.0,MyDNS,1,True,False,True,False,True,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.153.204.20,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.66.245.151,451,True,False,1.0,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,3.25.33.182,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.153.157.207,403,False,False,0.0,MyDNS,1,True,False,False,False,False,True,True,True,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.79.151.102,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,52.65.137.153,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,52.64.187.135,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,13.211.83.158,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,13.210.160.129,ERROR,False,False,,MyDNS,1,True,False,True,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,54.66.147.144,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,True,True,False,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+https://animehd47.com/,ERROR,0,0,,Optus,2021-06-08 14:13:31,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,True,True,False,True,False
+http://oazmdon.onzdoma.top,404,0,0,0.0,Optus,2021-06-08 14:15:36,202.95.19.214,200,False,False,0.0,MyDNS,1,False,False,True,False,True,False,False,False,True,True
+http://oazmdon.onzdoma.top,404,0,0,0.0,Optus,2021-06-08 14:15:36,202.95.19.214,200,False,False,0.0,GoogleDNS,0,False,False,True,False,True,False,False,False,True,True
+http://oazmdon.onzdoma.top,404,0,0,0.0,Optus,2021-06-08 14:15:36,202.95.19.214,200,False,False,0.0,Cloudflare,0,False,False,True,False,True,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:21:41,35.155.30.240,403,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:21:41,35.155.30.240,403,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:21:41,35.155.30.240,403,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:43:27,35.155.30.240,403,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:43:27,35.155.30.240,403,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Optus,2021-06-08 14:43:27,35.155.30.240,403,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://netflix-us.readywitted.com,200,0,0,0.0,Optus,2021-06-08 14:43:27,67.23.235.220,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://netflix-us.readywitted.com,200,0,0,0.0,Optus,2021-06-08 14:43:27,67.23.235.220,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://netflix-us.readywitted.com,200,0,0,0.0,Optus,2021-06-08 14:43:27,67.23.235.220,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Optus,2021-06-08 14:43:27,167.71.78.187,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Optus,2021-06-08 14:43:27,167.71.78.187,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Optus,2021-06-08 14:43:27,167.71.78.187,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Optus,2021-06-08 14:43:27,66.235.200.145,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Optus,2021-06-08 14:43:27,66.235.200.145,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Optus,2021-06-08 14:43:27,66.235.200.145,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Optus,2021-06-08 14:43:27,151.80.80.206,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Optus,2021-06-08 14:43:27,151.80.80.206,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Optus,2021-06-08 14:43:27,151.80.80.206,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Optus,2021-06-08 14:43:27,52.237.100.46,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Optus,2021-06-08 14:43:27,52.237.100.46,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Optus,2021-06-08 14:43:27,52.237.100.46,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.53,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.54,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.54,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.53,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.53,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Optus,2021-06-08 14:43:27,199.34.228.54,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Optus,2021-06-08 14:43:27,212.129.37.99,200,False,False,5.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Optus,2021-06-08 14:43:27,212.129.37.99,200,False,False,5.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Optus,2021-06-08 14:43:27,212.129.37.99,200,False,False,5.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Optus,2021-06-08 14:43:27,95.181.152.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Optus,2021-06-08 14:43:27,95.181.152.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Optus,2021-06-08 14:43:27,95.181.152.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Optus,2021-06-08 14:43:27,20.60.128.65,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Optus,2021-06-08 14:43:27,20.60.128.65,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Optus,2021-06-08 14:43:27,20.60.128.65,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:00:22,35.155.30.240,403,False,False,0.0,MyDNS,1,True,False,False,False,False,False,False,False,True,False
+http://britishgas-update.co.uk/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:00:22,35.155.30.240,403,False,False,0.0,GoogleDNS,0,True,False,False,False,False,False,False,False,True,False
+http://britishgas-update.co.uk/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:00:22,35.155.30.240,403,False,False,0.0,Cloudflare,0,True,False,False,False,False,False,False,False,True,False
+http://netflix-us.readywitted.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 15:00:22,67.23.235.220,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://netflix-us.readywitted.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 15:00:22,67.23.235.220,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://netflix-us.readywitted.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 15:00:22,67.23.235.220,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Australian Academic and Research Network,2021-06-08 15:10:54,167.71.78.187,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Australian Academic and Research Network,2021-06-08 15:10:54,167.71.78.187,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Australian Academic and Research Network,2021-06-08 15:10:54,167.71.78.187,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://laraccount.com/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,66.235.200.145,403,False,True,1.0,MyDNS,1,True,False,False,False,False,False,False,False,True,False
+http://laraccount.com/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,66.235.200.145,403,False,True,1.0,GoogleDNS,0,True,False,False,False,False,False,False,False,True,False
+http://laraccount.com/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,66.235.200.145,403,False,True,1.0,Cloudflare,0,True,False,False,False,False,False,False,False,True,False
+http://mail.glui.eu/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,151.80.80.206,200,False,False,0.0,MyDNS,1,True,False,True,True,True,False,False,False,True,False
+http://mail.glui.eu/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,151.80.80.206,200,False,False,0.0,GoogleDNS,0,True,False,True,True,True,False,False,False,True,False
+http://mail.glui.eu/,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 15:10:54,151.80.80.206,200,False,False,0.0,Cloudflare,0,True,False,True,True,True,False,False,False,True,False
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 15:10:54,52.237.100.46,ERROR,False,False,,MyDNS,1,True,True,True,True,False,False,False,False,False,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 15:10:54,52.237.100.46,ERROR,False,False,,GoogleDNS,0,True,True,True,True,False,False,False,False,False,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 15:10:54,52.237.100.46,ERROR,False,False,,Cloudflare,0,True,True,True,True,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.53,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.54,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.53,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.54,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.54,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Australian Academic and Research Network,2021-06-08 15:10:54,199.34.228.53,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Australian Academic and Research Network,2021-06-08 15:10:54,212.129.37.99,200,False,False,5.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Australian Academic and Research Network,2021-06-08 15:10:54,212.129.37.99,200,False,False,5.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Australian Academic and Research Network,2021-06-08 15:10:54,212.129.37.99,200,False,False,5.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 15:10:54,95.181.152.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 15:10:54,95.181.152.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 15:10:54,95.181.152.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Australian Academic and Research Network,2021-06-08 15:10:54,20.60.128.65,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Australian Academic and Research Network,2021-06-08 15:10:54,20.60.128.65,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Australian Academic and Research Network,2021-06-08 15:10:54,20.60.128.65,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Telstra Internet,2021-06-08 15:39:36,35.155.30.240,403,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Telstra Internet,2021-06-08 15:39:36,35.155.30.240,403,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://britishgas-update.co.uk/,200,0,0,27.0,Telstra Internet,2021-06-08 15:39:36,35.155.30.240,403,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://netflix-us.readywitted.com,ERROR,0,0,,Telstra Internet,2021-06-08 15:39:36,Errno11002getaddrinfofailed,ERROR,False,False,,MyDNS,1,True,False,False,False,False,True,False,True,False,False
+http://netflix-us.readywitted.com,ERROR,0,0,,Telstra Internet,2021-06-08 15:39:36,67.23.235.220,ERROR,False,False,,Cloudflare,0,True,False,True,True,False,True,False,False,False,False
+https://serviciosbndigitales.com/,200,0,0,2.0,Telstra Internet,2021-06-08 15:39:36,167.71.78.187,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Telstra Internet,2021-06-08 15:39:36,167.71.78.187,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://serviciosbndigitales.com/,200,0,0,2.0,Telstra Internet,2021-06-08 15:39:36,167.71.78.187,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Telstra Internet,2021-06-08 15:39:36,66.235.200.145,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Telstra Internet,2021-06-08 15:39:36,66.235.200.145,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://laraccount.com/,200,0,0,20.0,Telstra Internet,2021-06-08 15:39:36,66.235.200.145,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Telstra Internet,2021-06-08 15:39:36,151.80.80.206,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Telstra Internet,2021-06-08 15:39:36,151.80.80.206,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://mail.glui.eu/,200,0,0,10.0,Telstra Internet,2021-06-08 15:39:36,151.80.80.206,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Telstra Internet,2021-06-08 15:39:36,52.237.100.46,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Telstra Internet,2021-06-08 15:39:36,52.237.100.46,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://www.event515mobilelegends.duckdns.org,200,0,0,11.0,Telstra Internet,2021-06-08 15:39:36,52.237.100.46,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.53,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.54,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.53,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.54,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.54,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://yahhooomailspports.weebly.com/,200,0,0,21.0,Telstra Internet,2021-06-08 15:39:36,199.34.228.53,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Telstra Internet,2021-06-08 15:39:36,212.129.37.99,200,False,False,5.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Telstra Internet,2021-06-08 15:39:36,212.129.37.99,200,False,False,5.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+http://login.outlook.tx7.fr,200,0,0,5.0,Telstra Internet,2021-06-08 15:39:36,212.129.37.99,200,False,False,5.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Telstra Internet,2021-06-08 15:39:36,95.181.152.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Telstra Internet,2021-06-08 15:39:36,95.181.152.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://intimki.com/,200,0,0,9.0,Telstra Internet,2021-06-08 15:39:36,95.181.152.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Telstra Internet,2021-06-08 15:39:36,20.60.128.65,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Telstra Internet,2021-06-08 15:39:36,20.60.128.65,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat.z13.web.core.windows.net/,200,0,0,1.0,Telstra Internet,2021-06-08 15:39:36,20.60.128.65,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,192.254.234.165,406,False,False,0.0,MyDNS,1,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,192.254.234.165,406,False,False,0.0,GoogleDNS,0,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,192.254.234.165,406,False,False,0.0,Cloudflare,0,False,False,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 16:48:50,20.40.202.9,404,False,False,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 16:48:50,20.40.202.9,404,False,False,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Australian Academic and Research Network,2021-06-08 16:48:50,20.40.202.9,404,False,False,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://webhostingbingo.com,200,0,0,42.0,Australian Academic and Research Network,2021-06-08 16:48:50,103.108.117.235,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Australian Academic and Research Network,2021-06-08 16:48:50,103.108.117.235,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Australian Academic and Research Network,2021-06-08 16:48:50,103.108.117.235,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://miltonwoods.co.uk,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,217.160.0.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,217.160.0.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,217.160.0.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,172.67.139.254,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,104.21.49.8,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,172.67.139.254,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,104.21.49.8,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,104.21.49.8,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,172.67.139.254,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.36.144,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.163.244,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.163.244,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.36.144,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.36.144,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Australian Academic and Research Network,2021-06-08 16:48:50,3.139.163.244,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 16:48:50,188.225.40.162,200,False,False,3.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 16:48:50,188.225.40.162,200,False,False,3.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Australian Academic and Research Network,2021-06-08 16:48:50,188.225.40.162,200,False,False,3.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,MyDNS,1,True,False,False,False,False,False,False,False,False,False
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,MyDNS,1,True,False,False,False,False,False,False,False,False,False
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,GoogleDNS,0,True,False,False,False,False,False,False,False,False,False
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,GoogleDNS,0,True,False,False,False,False,False,False,False,False,False
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.1.195,ERROR,False,False,,Cloudflare,0,True,False,False,False,False,False,False,False,False,False
+http://clouddoc-authorize.firebaseapp.com,ERROR,0,0,,Australian Academic and Research Network,2021-06-08 16:48:50,151.101.65.195,ERROR,False,False,,Cloudflare,0,True,False,False,False,False,False,False,False,False,False
+https://protect.prositedemos.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,67.43.7.213,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,67.43.7.213,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Australian Academic and Research Network,2021-06-08 16:48:50,67.43.7.213,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Optus,2021-06-08 16:57:25,192.254.234.165,406,False,False,0.0,MyDNS,1,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Optus,2021-06-08 16:57:25,192.254.234.165,406,False,False,0.0,GoogleDNS,0,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Optus,2021-06-08 16:57:25,192.254.234.165,406,False,False,0.0,Cloudflare,0,False,False,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Optus,2021-06-08 16:57:25,20.40.202.9,404,False,False,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Optus,2021-06-08 16:57:25,20.40.202.9,404,False,False,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Optus,2021-06-08 16:57:25,20.40.202.9,404,False,False,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://webhostingbingo.com,200,0,0,42.0,Optus,2021-06-08 16:57:25,103.108.117.235,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Optus,2021-06-08 16:57:25,103.108.117.235,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Optus,2021-06-08 16:57:25,103.108.117.235,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://miltonwoods.co.uk,200,0,0,0.0,Optus,2021-06-08 16:57:25,217.160.0.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Optus,2021-06-08 16:57:25,217.160.0.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Optus,2021-06-08 16:57:25,217.160.0.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,104.21.49.8,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,172.67.139.254,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,172.67.139.254,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,104.21.49.8,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,172.67.139.254,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Optus,2021-06-08 16:57:25,104.21.49.8,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.163.244,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.36.144,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.163.244,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.36.144,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.163.244,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Optus,2021-06-08 16:57:25,3.139.36.144,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Optus,2021-06-08 16:57:25,188.225.40.162,200,False,False,3.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Optus,2021-06-08 16:57:25,188.225.40.162,200,False,False,3.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Optus,2021-06-08 16:57:25,188.225.40.162,200,False,False,3.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.1.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Optus,2021-06-08 16:57:25,151.101.65.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://protect.prositedemos.com,200,0,0,0.0,Optus,2021-06-08 16:57:25,67.43.7.213,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Optus,2021-06-08 16:57:25,67.43.7.213,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Optus,2021-06-08 16:57:25,67.43.7.213,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,192.254.234.165,406,False,False,0.0,MyDNS,1,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,192.254.234.165,406,False,False,0.0,GoogleDNS,0,False,False,False,False,False,False,False,False,True,True
+https://deltaflights.org/,406,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,192.254.234.165,406,False,False,0.0,Cloudflare,0,False,False,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Telstra Internet,2021-06-08 17:06:08,20.40.202.9,404,False,False,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Telstra Internet,2021-06-08 17:06:08,20.40.202.9,404,False,False,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://acrobat-cloud-services.azurewebsites.net,200,0,0,9.0,Telstra Internet,2021-06-08 17:06:08,20.40.202.9,404,False,False,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://webhostingbingo.com,200,0,0,42.0,Telstra Internet,2021-06-08 17:06:08,103.108.117.235,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Telstra Internet,2021-06-08 17:06:08,103.108.117.235,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://webhostingbingo.com,200,0,0,42.0,Telstra Internet,2021-06-08 17:06:08,103.108.117.235,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://miltonwoods.co.uk,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,217.160.0.88,404,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,217.160.0.88,404,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://miltonwoods.co.uk,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,217.160.0.88,404,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.1.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.65.195,ERROR,False,False,,MyDNS,1,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.1.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.65.195,ERROR,False,False,,GoogleDNS,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.1.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+https://clouddoc-authorize.firebaseapp.com,200,0,0,3.0,Telstra Internet,2021-06-08 17:06:08,151.101.65.195,ERROR,False,False,,Cloudflare,0,True,True,False,False,False,False,False,False,False,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,104.21.49.8,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.254,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.254,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,104.21.49.8,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.254,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://walletconnectsync.net,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,104.21.49.8,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.163.244,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.36.144,400,False,False,0.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.36.144,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.163.244,400,False,False,0.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.36.144,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://office365.auto1.casb.beta.forcepointgov.com/,200,0,0,10.0,Telstra Internet,2021-06-08 17:06:08,3.139.163.244,400,False,False,0.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Telstra Internet,2021-06-08 17:06:08,188.225.40.162,200,False,False,3.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Telstra Internet,2021-06-08 17:06:08,188.225.40.162,200,False,False,3.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://vh368.timeweb.ru/,200,0,0,11.0,Telstra Internet,2021-06-08 17:06:08,188.225.40.162,200,False,False,3.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,67.43.7.213,200,False,False,0.0,MyDNS,1,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,67.43.7.213,200,False,False,0.0,GoogleDNS,0,True,True,True,True,True,False,False,False,True,True
+https://protect.prositedemos.com,200,0,0,0.0,Telstra Internet,2021-06-08 17:06:08,67.43.7.213,200,False,False,0.0,Cloudflare,0,True,True,True,True,True,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,104.21.27.5,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.206,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.206,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,104.21.27.5,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,104.21.27.5,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Telstra Internet,2021-06-08 17:06:08,172.67.139.206,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,172.67.139.206,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,104.21.27.5,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,172.67.139.206,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,104.21.27.5,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,104.21.27.5,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Australian Academic and Research Network,2021-06-08 17:25:55,172.67.139.206,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,172.67.139.206,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,104.21.27.5,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,172.67.139.206,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,104.21.27.5,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,172.67.139.206,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+http://bbclientes.com,200,0,0,7.0,Optus,2021-06-08 17:27:39,104.21.27.5,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,104.21.85.65,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,172.67.203.15,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:10:33,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,172.67.203.15,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,104.21.85.65,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:41:16,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,172.67.203.15,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,104.21.85.65,403,False,True,1.0,MyDNS,1,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,104.21.85.65,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,172.67.203.15,403,False,True,1.0,GoogleDNS,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,172.67.203.15,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://animehd47.com/,200,0,0,46.0,Australian Academic and Research Network,2021-06-16 16:44:01,104.21.85.65,403,False,True,1.0,Cloudflare,0,True,True,False,False,False,False,False,False,True,True
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.54,ERROR,False,False,,MyDNS,1,True,False,False,False,False,False,False,False,False,False
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.53,ERROR,False,False,,MyDNS,1,True,False,False,False,False,False,False,False,False,False
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.53,ERROR,False,False,,GoogleDNS,0,True,False,False,False,False,False,False,False,False,False
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.54,ERROR,False,False,,GoogleDNS,0,True,False,False,False,False,False,False,False,False,False
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.53,ERROR,False,False,,Cloudflare,0,True,False,False,False,False,False,False,False,False,False
+https://yahhooomailspports.weebly.com/,404,0,0,1.0,Australian Academic and Research Network,2021-06-16 16:44:01,199.34.228.54,ERROR,False,False,,Cloudflare,0,True,False,False,False,False,False,False,False,False,False
