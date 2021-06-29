@@ -11,7 +11,7 @@ import geoip2.webservice
 
 
 
-def convert_domain_to_database(list_of_domain_objects, isp_name):
+def convert_domain_to_database(list_of_domain_objects, isp_name, user_fullname, user_email):
     print("Converting Data to Database")
     print("connecting to online mysql")
 
@@ -56,8 +56,8 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
     Download_and_Upload = speed_test()
     lat_and_long = get_my_location_from_IP()
     sql = '''
-    insert into ISP(isp_name, time_date, user_ip_address, Download_Speed, Upload_Speed, isp_name_speedtest, ping, public_ip_address, latitude, longitude, country) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')''' % (isp_name, time_now, user_ip_address,
-    Download_and_Upload.get('download'), Download_and_Upload.get('upload'), Download_and_Upload.get('isp_name'), Download_and_Upload.get('ping'), Download_and_Upload.get('client_ip'),lat_and_long.get('latitude') , lat_and_long.get('longitude'), lat_and_long.get('country'))
+    insert into ISP(isp_name, time_date, user_ip_address, Download_Speed, Upload_Speed, isp_name_speedtest, ping, public_ip_address, latitude, longitude, country, email, full_name) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')''' % (isp_name, time_now, user_ip_address,
+    Download_and_Upload.get('download'), Download_and_Upload.get('upload'), Download_and_Upload.get('isp_name'), Download_and_Upload.get('ping'), Download_and_Upload.get('client_ip'),lat_and_long.get('latitude') , lat_and_long.get('longitude'), lat_and_long.get('country'), user_fullname, user_email)
     cursor.execute(sql)
     db.commit()
 
@@ -205,7 +205,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
                 html_safe_for_MySQL = db.escape(html.encode(encoding = "utf-8"))
                 #Insert the IP address in to the datbase
                 sql = '''
-                    insert into Request(address, DNS_DELETELATER, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags, html_returned)
+                    insert into Request(address, DNS_DELETELATER, domainID, ip_response_code, ip_blockpage, ip_cloudflare_blockpage, ip_number_of_script_tags, html_returned)
                     values('%s', '%s', '%s', '%s', '%s', '%s', '%s', %s)''' % (ip, dns_name, domainID, response_code, blockpage, cloudflare_blockpage, number_of_script_tags, html_safe_for_MySQL)
 
                 print("Inserted :"+str(ip))
@@ -214,7 +214,7 @@ def convert_domain_to_database(list_of_domain_objects, isp_name):
     db.close()
 
 def main():
-    convert_domain_to_database(domain_obj = None, isp_name = "TEST_31_May")
+    convert_domain_to_database(domain_obj = None, isp_name = "TEST_31_May", user_fullname = "test", user_email = "test@email.com")
 
 
 

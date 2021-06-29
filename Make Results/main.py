@@ -18,6 +18,12 @@ def writeObjectToCSV(obj, writeFile):
 #This function gets all the results for each domain and saves results in a domain object.
 #The list of domain objects is parsed to 'convert_domain_to_database' to store in AWS.
 def CalculateListOfDomains(openFile):
+
+    #get user details
+    user_ISP = input("What ISP are you using?")
+    user_fullname = input("What is your name?")
+    user_email = input("What is your email? ")
+
     #Iterates through the domains from 'openFile' and writes results to CSV
     websiteList = []
     with open(openFile) as fp:
@@ -43,7 +49,7 @@ def CalculateListOfDomains(openFile):
         list_of_domain_objects.append(obj)
 
         #Writes domain object to AWS RDS
-    convert_domain_to_database(list_of_domain_objects = list_of_domain_objects, isp_name = "TEST_25_May")
+    convert_domain_to_database(list_of_domain_objects = list_of_domain_objects, isp_name = user_ISP, user_fullname = user_fullname, user_email = user_email)
 
 
 

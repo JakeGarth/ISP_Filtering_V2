@@ -11,3 +11,5 @@ INNER JOIN
 DNS dns ON d.dnsID = dns.id
 INNER JOIN
 ISP isp ON dns.ispID = isp.id;
+
+#Then export results to CSV

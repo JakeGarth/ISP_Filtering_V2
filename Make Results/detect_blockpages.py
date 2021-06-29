@@ -21,7 +21,10 @@ def text_from_html(body):
 #This list needs to expanded
 block_page_phrases = [
     "ACCESS TO THIS WEBSITE HAS BEEN DISABLED BECAUSE THE FEDERAL COURT OF AUSTRALIA HAS DETERMINED THAT IT INFRINGES OR FACILITATES THE INFRINGEMENT OF COPYRIGHT",
-    "Access Denied"
+    "Access Denied",
+    "Access to this website has been disabled by an order of the Federal Court of Australia because it infringes or facilitates the infringement of copyright",
+    "1800 086 346",
+    "1800086346"
     ]
 
 #This list needs to be expanded
