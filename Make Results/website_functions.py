@@ -38,7 +38,7 @@ def speed_test():
     except:
         return {'download':-1, 'upload':-1, 'isp_name': -1, 'ping': -1, 'client_ip': -1}
     All_Results = st.results.dict()
-    print("All results")
+    print("Speedtest Results")
     print(All_Results)
 
     try:
@@ -66,8 +66,6 @@ def speed_test():
     except:
         client_ip = '-1'
 
-    print("st.results.dict()")
-    print(st.results.dict())
     return {'download':Download, 'upload':Upload, 'isp_name': ISP_name, 'ping': ping, 'client_ip': client_ip}
 
 
@@ -96,10 +94,8 @@ def requestWebsite(websiteURL, http, https):
 
     #If response code isnt a number, just insert error in to database
     if str(r.status_code).isnumeric() == False:
-        print("status code isnt numeric...")
         results['ResponseCode'] = "ERROR"
     else:
-        print("status code is numeric...")
         results['ResponseCode'] = str(r.status_code)
 
     results['BlockPage'] = detectBlockPage(text_from_html(r.text))
@@ -123,9 +119,7 @@ def listOfDNSs():
 
 #Return the IP's resolved by every DNS
 def resolveIPFromDNS(hostname, DNSList):
-    print("hostname")
-    print("DNSList:--------------")
-    print(DNSList)
+
     domain = hostname
     compiledList = []
     # set optional Cloudflare public DNS server
@@ -140,8 +134,6 @@ def resolveIPFromDNS(hostname, DNSList):
         compiledList.append(tuple)
         tuple = ()
 
-    print("CompiledList-----------------------------")
-    print(compiledList)
     return compiledList
 
 
@@ -171,7 +163,7 @@ def scapyTracerouteWithSR(domain):
 #Given a list of IP addresses
 #return the response code, blockpage detection and number of script tags (and maybe html)
 def IPResponseCodesAndText(IPList):
-    print("IPList: "+str(IPList))
+
     responseCodeList = []
     blockPageList = []
     cloudFlareBlockPageList = []
@@ -198,7 +190,7 @@ def getIPResponseCodeAndText(IPAddress):
         return "NaN"
     try:
         #If requests takes longer than 5 seconds to connect, just return Error. Clearly some kind of failed connection
-        print("IP ADDRESS----------------------------------: "+str(IPAddress))
+
         r = requests.get('http://'+IPAddress, timeout=5)
         return {'Response_Code': r.status_code, 'Visible_Text': text_from_html(r.text), 'number_of_script_tags':number_script_tags(r.text), 'html':r.text}
 

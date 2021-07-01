@@ -73,8 +73,6 @@ class Domain:
             if isinstance(ipList, str):
                 ipList = ipList.replace("[","").replace("]","").replace(" ","").replace("'","").split(";")
             self.ISP_DNS_IPS = ipList
-            print("ISP_DNS_IPS--------------------------------------------------------JAKE HERE 1")
-            print(self.ISP_DNS_IPS)
         else:
             try:
                 ipList = ISP_DNS_IPS
@@ -102,16 +100,9 @@ class Domain:
             self.Resolved_IPs = Resolved_IPs
 
         if Google_DNS == "":
-            print("Resolved_IPs")
-            print(Resolved_IPs)
-            print("listOfDNSs()[1]")
-            print(listOfDNSs()[1])
-            print("listOfDNSs()[2].get('Google')")
-            print(listOfDNSs()[2].get('Google'))
 
             self.Google_DNS = self.Resolved_IPs.get(listOfDNSs()[1].get('GoogleDNS'))
-            print("self.Google_DNS----------------")
-            print(self.Google_DNS)
+
         else:
             try:
                 ipList = []
@@ -125,8 +116,7 @@ class Domain:
 
         if Cloudflare_DNS == "":
             self.Cloudflare_DNS = self.Resolved_IPs.get(listOfDNSs()[1].get('Cloudflare'))
-            print("self.Cloudflare_DNS----------------")
-            print(self.Cloudflare_DNS)
+
         else:
             try:
                 ipList = []
@@ -272,8 +262,7 @@ class Domain:
     def return_IPs_Different_DNS(self):
         DifferentDNSIPs = resolveIPFromDNS(self.domainNoHTTPNoSlashNoWWW, listOfDNSs()[0])
         myDNSIP = listOfDNSs()[1].get('MyDNS')
-        print("myDNSIP")
-        print(myDNSIP)
+
         IPs_per_DNS = {}
 
         for DNS in range(0, len(DifferentDNSIPs)):
@@ -282,11 +271,6 @@ class Domain:
                 IPs_per_DNS[myDNSIP] = self.ISP_DNS_IPS
             else:
                 IPs_per_DNS[DifferentDNSIPs[DNS][0]] = DifferentDNSIPs[DNS][1]
-
-        print("DifferentDNSIPs")
-        print(DifferentDNSIPs)
-        print("IPs_per_DNS")
-        print(IPs_per_DNS)
 
         return IPs_per_DNS
 

@@ -1,13 +1,9 @@
 To Do
 
+-have a log output, and maybe have a yes or no whether an error occured on a domain
 
-- might need to do some kind of last insert to make sure there is no concurrency issues with inserting.
+- change all the print statements just to pring out the important things
 
-- need to make it such that it saves every domain as it goes. Reason being, in case it breaks or someone stops half wya through the list of domains, we stil have all the data up to that point.
-  - maybe put a try catch around each domain and just go to next domain if there is an error
-  - make sure no issues with getting the most recent insert in to the DB when doing the try and catch
-
-- need to request user input for the user name,  ISP name, etc
 
 -You can store less html if you only save it once per ISP for the default domain name test (in the Domain table)
 
@@ -34,6 +30,13 @@ Fixed
 - push to git, then just delete them from DNS list and see what breaks
 - Might need to change the names of the sql columns so they align with the csv interpreter
 - make the DNS's being checked scalable? Maybe this involves alot of deleting nonsense variables in the Domain?
+- might need to do some kind of last insert to make sure there is no concurrency issues with inserting.
+
+- need to make it such that it saves every domain as it goes. Reason being, in case it breaks or someone stops half wya through the list of domains, we stil have all the data up to that point.
+  - maybe put a try catch around each domain and just go to next domain if there is an error
+  - make sure no issues with getting the most recent insert in to the DB when doing the try and catch
+
+- need to request user input for the user name,  ISP name, etc
 
 Dismissed
 
